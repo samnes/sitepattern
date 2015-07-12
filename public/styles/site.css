@@ -5801,8 +5801,25 @@ button.close {
   max-width: 100%;
   height: auto; }
 
+h1, .h1,
+h2, .h2,
+h3, .h3 {
+  margin-top: 20px;
+  margin-bottom: 20px; }
+
+.btn-rounded {
+  border-radius: 25px;
+  padding-left: 25px;
+  padding-right: 25px; }
+
 .jumbotron {
   text-align: center; }
+  .jumbotron ul {
+    padding-top: 6px;
+    padding-bottom: 6px; }
+  .jumbotron ul li {
+    list-style: none;
+    font-size: 24px; }
   @media screen and (min-width: 768px) {
     .jumbotron h1,
     .jumbotron .h1 {

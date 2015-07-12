@@ -16,12 +16,39 @@
 }
 
 
+//== Typography
+//
+
+h1, .h1,
+h2, .h2,
+h3, .h3 {
+  margin-top: $line-height-computed;
+  margin-bottom: $line-height-computed;
+}
+
+//== Buttons
+//
+
+.btn-rounded{
+	border-radius: $border-radius-rounded;
+	padding-left: 25px;
+	padding-right: 25px;
+}
+
 
 //== Jumbotron
 //
 
 .jumbotron {
 	text-align: center;
+	ul{
+		padding-top: $padding-base-vertical;
+		padding-bottom: $padding-base-vertical;
+	}
+	ul li{
+		list-style: none;
+		font-size: $font-size-h3;
+	}
 
 @media screen and (min-width: $screen-sm-min) {
 
