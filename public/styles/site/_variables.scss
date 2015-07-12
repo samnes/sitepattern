@@ -1,3 +1,10 @@
 // Override Bootstrap variables in this file, e.g.
 
 $font-size-base: 14px;
+
+
+//== Typography
+//
+//## Font, line-height, and color for body text, headings, and more.
+
+$font-size-h1:            floor(($font-size-base * 2.6)) !default; // ~36px
