@@ -1,18 +1,32 @@
 // Override Bootstrap variables in this file, e.g.
 
-$font-size-base: 14px;
+
+//== Colors
+//
+
+$brand-dark:         #373839; //
 
 
 //== Typography
 //
 //## Font, line-height, and color for body text, headings, and more.
+$font-size-base: 14px;
 
-$font-size-h1:            floor(($font-size-base * 2.6)) !default; // ~36px
+$font-family-sans-serif:  'Source Sans Pro', "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-serif:       'Bitter', Georgia, "Times New Roman", Times, serif;
 
-
-
-
+$font-family-base:        $font-family-sans-serif;
 
 //== New variables
 //
 $border-radius-rounded: 25px;
+
+
+
+//== Buttons
+//
+//## For each of Bootstrap's buttons, define text, background and border color.
+
+$btn-dark-color:              #fff ;
+$btn-dark-bg:                 $brand-dark ;
+$btn-dark-border:             darken($btn-dark-bg, 5%) ;
