@@ -15,14 +15,14 @@ keystone.init({
 
 	'name': 'Site patterns',
 	'brand': 'Site patterns',
-	
+
 	'sass': 'public',
 	'static': 'public',
 	'favicon': 'public/favicon.ico',
 	'views': 'templates/views',
 	'view engine': 'html',
 	'custom engine': cons.nunjucks,
-	
+
 	'auto update': true,
 	'session': true,
 	'auth': true,
@@ -57,6 +57,7 @@ keystone.set('routes', require('./routes'));
 
 keystone.set('nav', {
 	'posts': ['posts', 'post-categories'],
+	'sites': 'sites',
 	'galleries': 'galleries',
 	'enquiries': 'enquiries',
 	'users': 'users'
