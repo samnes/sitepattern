@@ -6,26 +6,26 @@ exports = module.exports = function(req, res){
   var locals = res.locals;
 
   // Set locals
-  locals.section = 'site';
+  locals.section = 'layout';
   locals.filters = {
-		site: req.params.site
+		layout: req.params.layout
 	};
   locals.data = {
-    sites: []
+    layouts: []
   }
-  // Load the published sites
+  // Load the published layouts
   view.on('init', function(next){
 
-    var q = keystone.list('Site').model.find().where('state', 'published').sort('-publishedDate');
+    var q = keystone.list('Layout').model.find().where('state', 'published').sort('-publishedDate');
 
       q.exec(function(err, results) {
-  			locals.data.sites = results;
+  			locals.data.layouts = results;
   			next(err);
   		});
 
     });
 
     // Render the view
-  	view.render('site');
+  	view.render('layout');
 
 };

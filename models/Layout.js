@@ -1,17 +1,16 @@
 var keystone = require('keystone');
-var Types = keystone.Field.Types;
 
 /**
- * Site Model
+ * Layout Model
  * ==========
  */
 
- var Site = new keystone.List('Site', {
- 	map: { name: 'title' },
- 	autokey: { path: 'slug', from: 'title', unique: true }
+ var Layout = new keystone.List('Layout', {
+  map: { name: 'title' },
+  autokey: { path: 'slug', from: 'title', unique: true }
  });
 
- Site.add({
+ Layout.add({
  	title: { type: String, required: true },
  	state: { type: Types.Select, options: 'draft, published, archived', default: 'draft', index: true },
  	author: { type: Types.Relationship, ref: 'User', index: true },
@@ -20,8 +19,10 @@ var Types = keystone.Field.Types;
  	content: {
  		brief: { type: Types.Html, wysiwyg: true, height: 150 },
  	},
-  layouts: { type: Types.Relationship, ref: 'Layout' }
  });
 
 
- Site.register();
+Layout.relationship({ ref: 'Site', path: 'layouts' });
+
+
+Layout.register();

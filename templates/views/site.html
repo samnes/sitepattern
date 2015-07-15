@@ -8,9 +8,35 @@
 
 {% block content %}
   <div class="container">
-    {% if sites.length %}
+    {% if data.sites.length %}
+      <div class="row hero-panels">
+
+      {% for site in data.sites %}
+
+        <div class="col-md-4">
+          <div class="panel panel-default">
+            <div class="panel-body">
+
+              {% if site.image.exists %}
+            		<img src="{{ site._.image.thumbnail(326,205) }}" class="img">
+            	{% endif %}
+
+              <h4>{{ site.title }}</h4>
+
+            </div>
+          </div>
+        </div>
+
+        {% if loop.index % 3 == 0 %}
+          </div><div class="row hero-panels">
+        {% elif loop.last %}
+          </div>
+        {% endif %}
 
 
+      {% endfor %}
+
+      </div>
 
     {% else %}
       <h3 class="text-muted">There are no site types yet.</h3>
