@@ -7,16 +7,14 @@ exports = module.exports = function(req, res){
   var locals = res.locals;
 
   // Set locals
-  locals.section = 'layout';
+  locals.section = 'site';
   locals.filters = {
 		layout: req.params.layout
 	};
   locals.data = {
     selected: [],
     layouts: []
-
   };
-
 
 
   // Load the current category filter

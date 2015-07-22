@@ -22,7 +22,7 @@
             		<img src="{{ layout._.image.thumbnail(326,205) }}" class="img">
             	{% endif %}
 
-              <h4>{{ layout.title }}</h4>
+							<a href="/site/layout/{{ data.layout.slug }}/view/{{ layout.key }}"><h4>{{ layout.title }}</h4></a>
 
             </div>
           </div>
@@ -36,8 +36,6 @@
 
 
       {% endfor %}
-
-      </div>
 
     {% else %}
       <h3 class="text-muted">There are no layouts for the site type yet.</h3>

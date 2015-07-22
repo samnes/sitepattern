@@ -21,8 +21,6 @@ exports = module.exports = function(req, res){
       q.exec(function(err, results) {
   			locals.data.sites = results;
 
-        console.log('End result site' + locals.data.sites[0]);
-
   			next(err);
   		});
 
