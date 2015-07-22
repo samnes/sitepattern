@@ -1,4 +1,5 @@
 var keystone = require('keystone');
+var Types = keystone.Field.Types;
 
 /**
  * Layout Model
@@ -7,7 +8,7 @@ var keystone = require('keystone');
 
  var Layout = new keystone.List('Layout', {
   map: { name: 'title' },
-  autokey: { path: 'slug', from: 'title', unique: true }
+  autokey: { path: 'key', from: 'title', unique: true }
  });
 
  Layout.add({
@@ -19,6 +20,7 @@ var keystone = require('keystone');
  	content: {
  		brief: { type: Types.Html, wysiwyg: true, height: 150 },
  	},
+  //sites: { type: Types.Relationship, ref: 'Site' }
  });
 
 

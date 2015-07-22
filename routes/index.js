@@ -40,7 +40,7 @@ exports = module.exports = function(app) {
 	app.get('/blog/post/:post', routes.views.post);
 
   app.get('/site', routes.views.site);
-  app.get('/site/:layout?', routes.views.layouts);
+  app.get('/site/layout/:layout', routes.views.layout);
 
 	app.get('/gallery', routes.views.gallery);
 	app.all('/contact', routes.views.contact);

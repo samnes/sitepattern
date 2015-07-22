@@ -23,7 +23,9 @@
 	{% if post.content.extended %}
 		<p class="read-more">
 			<a href="/blog/post/{{ post.slug }}">Read more...</a>
+
 		</p>
+		<p class="read-more">{{ post }}</p>
 	{% endif %}
 </div>
 {% endmacro %}

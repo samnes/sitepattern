@@ -20,8 +20,10 @@ var Types = keystone.Field.Types;
  	content: {
  		brief: { type: Types.Html, wysiwyg: true, height: 150 },
  	},
-  layouts: { type: Types.Relationship, ref: 'Layout' }
+  layouts: { type: Types.Relationship, ref: 'Layout', many: true }
  });
+
+ //Site.relationship({ ref: 'Layout', path: 'sites', refPath: "layouts" });
 
 
  Site.register();

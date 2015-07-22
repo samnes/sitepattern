@@ -1,0 +1,47 @@
+{% extends "templates/layouts/default.html" %}
+
+{% block intro %}
+	<div class="container">
+		<h1> {{ data.layouts[0] }} layouts</h1>
+	</div>
+{% endblock %}
+
+
+{% block content %}
+  <div class="container">
+    {% if data.selected.length %}
+      <div class="row hero-panels">
+
+      {% for layout in data.selected %}
+
+        <div class="col-md-4">
+          <div class="panel panel-default">
+            <div class="panel-body">
+
+              {% if layout.image.exists %}
+            		<img src="{{ layout._.image.thumbnail(326,205) }}" class="img">
+            	{% endif %}
+
+              <h4>{{ layout.title }}</h4>
+
+            </div>
+          </div>
+        </div>
+
+        {% if loop.index % 3 == 0 %}
+          </div><div class="row hero-panels">
+        {% elif loop.last %}
+          </div>
+        {% endif %}
+
+
+      {% endfor %}
+
+      </div>
+
+    {% else %}
+      <h3 class="text-muted">There are no layouts for the site type yet.</h3>
+    {% endif %}
+
+  </div>
+{% endblock %}

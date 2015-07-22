@@ -12,11 +12,11 @@ exports = module.exports = function(req, res){
 	};
   locals.data = {
     sites: []
-  }
+  };
   // Load the published sites
   view.on('init', function(next){
 
-    var q = keystone.list('Site').model.find().where('state', 'published').sort('-publishedDate');
+    var q = keystone.list('Site').model.find().where('state', 'published').sort('-publishedDate').populate('layouts');
 
       q.exec(function(err, results) {
   			locals.data.sites = results;
