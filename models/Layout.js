@@ -13,6 +13,7 @@ var Types = keystone.Field.Types;
 
  Layout.add({
  	title: { type: String, required: true },
+  sites: { type: Types.Relationship, ref: 'Site' },
  	state: { type: Types.Select, options: 'draft, published, archived', default: 'draft', index: true },
  	author: { type: Types.Relationship, ref: 'User', index: true },
  	publishedDate: { type: Types.Date, index: true, dependsOn: { state: 'published' } },
@@ -20,11 +21,12 @@ var Types = keystone.Field.Types;
  	content: {
  		brief: { type: Types.Html, wysiwyg: true, height: 150 },
  	},
-  //sites: { type: Types.Relationship, ref: 'Site' }
+  context: { type: Types.Html, wysiwyg: true, height: 150, label: 'Context of use' }
+
  });
 
 
-Layout.relationship({ ref: 'Site', path: 'layouts' });
+//Layout.relationship({ ref: 'Site', path: 'layouts' });
 
 
 Layout.register();

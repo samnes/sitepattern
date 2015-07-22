@@ -16,10 +16,13 @@ exports = module.exports = function(req, res){
   // Load the published sites
   view.on('init', function(next){
 
-    var q = keystone.list('Site').model.find().where('state', 'published').sort('-publishedDate').populate('layouts');
+    var q = keystone.list('Site').model.find().where('state', 'published').sort('-publishedDate');
 
       q.exec(function(err, results) {
   			locals.data.sites = results;
+
+        console.log('End result site' + locals.data.sites[0]);
+
   			next(err);
   		});
 
