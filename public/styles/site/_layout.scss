@@ -17,7 +17,21 @@
 
 body{
 	font-family: $font-family-sans-serif;
+	padding-top: 51px; 
 }
+
+
+#body, body, html{
+	height: 100%;
+}
+
+//== Navbar
+//
+
+.navbar{
+	margin-bottom: 0px;
+}
+
 
 //== Typography
 //
@@ -33,7 +47,7 @@ h3, .h3 {
 
 //== Panel
 //
-//New class
+
 .hero-panels h2, .hero-panels h3 {
 	margin-top: 0;
 }
@@ -73,4 +87,36 @@ h3, .h3 {
 		}
 	}
 
+}
+
+//== Left sidebar
+//
+
+.main{
+	height: 100%;
+	overflow: auto;
+}
+
+.sidebar-left{
+	height: 100%;
+	left: 0;
+	top: 51px;
+	position: fixed;
+	width: 241px;
+	background-color:#f5f5f5;
+	z-index: 28;
+	user-select: none;
+}
+
+.sidebar-right{
+	position: fixed;
+	width: 241px;
+	height: 100%;
+	right: 0;
+	top: 51px;
+	background-color:#f5f5f5;
+	padding: 0;
+	z-index: 14;
+	user-select: none;
+	backface-visibility: hidden;
 }
