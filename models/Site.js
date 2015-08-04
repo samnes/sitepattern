@@ -17,11 +17,7 @@ var Types = keystone.Field.Types;
  	author: { type: Types.Relationship, ref: 'User', index: true },
  	publishedDate: { type: Types.Date, index: true, dependsOn: { state: 'published' } },
  	image: { type: Types.CloudinaryImage },
- 	content: {
- 		brief: { type: Types.Html, wysiwyg: true, height: 150 },
- 	},
-  //layouts: { type: Types.Relationship, ref: 'Layout', many: true }
-  
+  description: { type: Types.Html, wysiwyg: true, height: 150, label: 'Description' }
  });
 
 Site.relationship({ ref: 'Layout', path: 'sites', refPath: "layouts" });
