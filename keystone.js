@@ -58,6 +58,8 @@ keystone.set('routes', require('./routes'));
 keystone.set('nav', {
 	'posts': ['posts', 'post-categories'],
 	'sites': 'sites',
+	'layouts': 'layouts',
+	'patterns': 'patterns',
 	'galleries': 'galleries',
 	'enquiries': 'enquiries',
 	'users': 'users'

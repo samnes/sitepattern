@@ -4,19 +4,7 @@
 
 	 <div class="sidebar-left">
 			<div class="col-md-12">
-				<h3>Sidebar</h3>
-				<ul class="nav nav-pills nav-stacked">
-					<li class="active"><a href="#">Section</a></li>
-					<li><a href="#">Section</a></li>
-					<li><a href="#">Section</a></li>
-					<li><a href="#">Section</a></li>
-					<li><a href="#">Section</a></li>
-					<li><a href="#">Section</a></li>
-					<li><a href="#">Section</a></li>
-					<li><a href="#">Section</a></li>
-					<li><a href="#">Section</a></li>
-					<li><a href="#">Section</a></li>
-				</ul>
+
 			</div>
 	</div>
 
@@ -24,7 +12,7 @@
 <div class="main">
 
 	<div class="container">
-		<h1> {{ data.views.title }} layout</h1>
+		<h1> {{ data.patterns.title }} pattern</h1>
 	</div>
 
 {% endblock %}
@@ -32,7 +20,7 @@
 
 {% block content %}
   <div class="container">
-    {% if data.views %}
+    {% if data.patterns %}
 
       <div class="row hero-panels">
 
@@ -40,11 +28,15 @@
 		          <div class="panel panel-default">
 		            <div class="panel-body">
 
-		              {% if data.views.image.exists %}
-		            		<img src="{{ data.views._.image.thumbnail(326,205) }}" class="img">
+		              {% if data.patterns.image.exists %}
+		            		<img src="{{ data.patterns._.image.thumbnail(326,205) }}" class="img">
 		            	{% endif %}
 
-		              <h4>{{ data.views.title }}</h4>
+                  {% if data.patterns.code %}
+                    {{ data.patterns.code }}
+                  {% endif %}
+                  
+		              <h4>{{ data.patterns.title }}</h4>
 
 		            </div>
 		          </div>
@@ -66,7 +58,7 @@
 
 			<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 
-				{% if data.views.description %}
+				{% if data.patterns.description %}
 
 					<div class="panel panel-default">
 
@@ -80,7 +72,7 @@
 
 							<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
 							      <div class="panel-body">
-											{{ data.views.description }}
+											{{ data.patterns.description }}
 										</div>
 							</div>
 
@@ -89,7 +81,7 @@
 					{% endif %}
 
 
-					{% if data.views.context %}
+					{% if data.patterns.context %}
 
 						<div class="panel panel-default">
 
@@ -103,7 +95,7 @@
 
 								<div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
 											<div class="panel-body">
-												{{ data.views.context }}
+												{{ data.patterns.context }}
 											</div>
 								</div>
 
