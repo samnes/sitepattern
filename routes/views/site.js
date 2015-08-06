@@ -20,7 +20,6 @@ exports = module.exports = function(req, res){
 
       q.exec(function(err, results) {
   			locals.data.sites = results;
-
   			next(err);
   		});
 

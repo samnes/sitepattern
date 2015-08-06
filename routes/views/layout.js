@@ -20,11 +20,9 @@ exports = module.exports = function(req, res){
   // Load the current category filter
   view.on('init', function(next) {
 
-
     if (req.params.layout) {
       keystone.list('Site').model.findOne({ slug: locals.filters.layout }).exec(function(err, result) {
         locals.data.layout = result;
-
         next(err);
       });
     } else {

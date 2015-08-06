@@ -14,6 +14,7 @@ var Types = keystone.Field.Types;
  Layout.add({
  	title: { type: String, required: true },
   sites: { type: Types.Relationship, ref: 'Site' },
+  patterns: { type: Types.Relationship, ref: 'Pattern' },
  	state: { type: Types.Select, options: 'draft, published, archived', default: 'draft', index: true },
  	author: { type: Types.Relationship, ref: 'User', index: true },
  	publishedDate: { type: Types.Date, index: true, dependsOn: { state: 'published' } },

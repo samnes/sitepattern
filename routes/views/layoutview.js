@@ -20,7 +20,7 @@ exports = module.exports = function(req, res) {
 		var q = keystone.list('Layout').model.findOne({
 			state: 'published',
       key: locals.filters.view
-      }).populate('author sites');
+      }).populate('author sites patterns');
 
 		q.exec(function(err, result) {
 			locals.data.views = result;
