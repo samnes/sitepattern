@@ -17,11 +17,11 @@ exports = module.exports = function(req, res){
   };
 
 
-  // Load the current category filter
+  // Load the current layout filter
   view.on('init', function(next) {
 
     if (req.params.layout) {
-      keystone.list('Site').model.findOne({ slug: locals.filters.layout }).exec(function(err, result) {
+      keystone.list('Site').model.findOne({ key: locals.filters.layout }).exec(function(err, result) {
         locals.data.layout = result;
         next(err);
       });
@@ -31,7 +31,7 @@ exports = module.exports = function(req, res){
 
   });
 
-    // Load the posts
+    // Load the layouts
     view.on('init', function(next) {
 
       var q = keystone.list('Layout').model.find().where('state', 'published').sort('-publishedDate').populate('sites author');
@@ -42,7 +42,6 @@ exports = module.exports = function(req, res){
 
       q.exec(function(err, results) {
         locals.data.selected = results;
-        console.log('End result layout ' + locals.data.selected[0]);
 
         next(err);
       });

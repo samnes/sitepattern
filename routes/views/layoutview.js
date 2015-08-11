@@ -14,7 +14,7 @@ exports = module.exports = function(req, res) {
     views: []
   };
 
-	// Load the current post
+	// Load the current layout
 	view.on('init', function(next) {
 
 		var q = keystone.list('Layout').model.findOne({
@@ -24,6 +24,9 @@ exports = module.exports = function(req, res) {
 
 		q.exec(function(err, result) {
 			locals.data.views = result;
+
+			console.log('End result layout ' + locals.data.views);
+
 			next(err);
 		});
 

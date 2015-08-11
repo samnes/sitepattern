@@ -8,7 +8,7 @@ var Types = keystone.Field.Types;
 
  var Site = new keystone.List('Site', {
  	map: { name: 'title' },
- 	autokey: { path: 'slug', from: 'title', unique: true }
+ 	autokey: { path: 'key', from: 'title', unique: true }
  });
 
  Site.add({
@@ -20,7 +20,11 @@ var Types = keystone.Field.Types;
   description: { type: Types.Html, wysiwyg: true, height: 150, label: 'Description' }
  });
 
+/**
+* Relationships
+*/
+
 Site.relationship({ ref: 'Layout', path: 'sites', refPath: "layouts" });
 
 
- Site.register();
+Site.register();
