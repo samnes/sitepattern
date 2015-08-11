@@ -8,7 +8,8 @@ exports = module.exports = function(req, res) {
 	// Set locals
 	locals.section = 'site';
 	locals.filters = {
-		view: req.params.layoutview
+		view: req.params.layoutview,
+		originalUrl: req.originalUrl
 	};
   locals.data = {
     views: []

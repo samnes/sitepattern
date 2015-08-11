@@ -25,17 +25,22 @@
       <div class="row hero-panels">
 
 		        <div class="col-md-12">
-		          <div class="panel panel-default">
-		            <div class="panel-body">
 
-		              {% if data.views.image.exists %}
-		            		<img src="{{ data.views._.image.thumbnail(326,205) }}" class="img">
-		            	{% endif %}
+									{% if data.views.patterns.length %}
 
-		              <h4>{{ data.views.title }}</h4>
+										{% for pattern in data.views.patterns %}
 
-		            </div>
-		          </div>
+										<div class="panel panel-default">
+					            <div class="panel-body">
+											{{ pattern.code }}
+											<a href="{{ filters.originalUrl }}/pattern/{{ pattern.key }}"><h4>{{ pattern.title }}</h4></a>
+											</div>
+				          	</div>
+										{% endfor %}
+
+									{% else %}
+										<h3 class="text-muted">There are no patterns in this layout yet.</h3>
+									{% endif %}
 		        </div>
 
     	</div>
