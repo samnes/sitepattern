@@ -4,6 +4,11 @@ var fs = require('fs');
 
 exports = module.exports = function(req, res){
 
+    var name = req.body.title,
+       code = req.body.code;
+
+    console.log("This is correct:" + name + code);
+
     var archive = archiver('zip');
 
     archive.on('error', function(err) {
@@ -17,7 +22,7 @@ exports = module.exports = function(req, res){
     });
 
     //set the archive name
-    res.attachment('archive-name.zip');
+    res.attachment('pattern.zip');
 
     //this is the streaming magic
     archive.pipe(res);

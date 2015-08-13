@@ -21,6 +21,8 @@
 var keystone = require('keystone');
 var middleware = require('./middleware');
 var importRoutes = keystone.importer(__dirname);
+var bodyParser = require('body-parser');
+
 
 // Common Middleware
 keystone.pre('routes', middleware.initLocals);
@@ -35,6 +37,9 @@ var routes = {
 // Setup Route Bindings
 exports = module.exports = function(app) {
 
+  // create application/json parser
+  var jsonParser = bodyParser.json();
+
 	// Views
 	app.get('/', routes.views.index);
 	app.get('/blog/:category?', routes.views.blog);
@@ -48,7 +53,13 @@ exports = module.exports = function(app) {
 	app.get('/gallery', routes.views.gallery);
 	app.all('/contact', routes.views.contact);
 
-  app.get('/download', routes.util.download);
+  app.all('/download', routes.util.download);
+  /*app.post('/download', jsonParser, function(req, res) {
+    var name = req.body.title,
+       color = req.body.message;
+    console.log(name);
+});*/
+
 
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
 	// app.get('/protected', middleware.requireUser, routes.views.protected);

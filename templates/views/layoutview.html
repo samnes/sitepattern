@@ -22,7 +22,7 @@
   <div class="container">
     {% if data.views %}
 
-      <div class="row hero-panels">
+      <div id="code" class="row hero-panels">
 
 		        <div class="col-md-12">
 
@@ -57,6 +57,13 @@
 <div class="sidebar-right">
 		<div class="col-md-12">
 
+			<div class="panel panel-default">
+				<div class="panel-body text-center">
+					<a id="layout-download" class="btn btn-rounded btn-dark btn-md" href="#" role="button">Download HTML</a>
+				</div>
+			</div>
+
+
 			<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 
 				{% if data.views.description %}
@@ -72,9 +79,9 @@
 					    </div>
 
 							<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-							      <div class="panel-body">
-											{{ data.views.description }}
-										</div>
+					      <div class="panel-body">
+									{{ data.views.description }}
+								</div>
 							</div>
 
 					</div>
