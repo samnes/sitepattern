@@ -53,13 +53,7 @@ exports = module.exports = function(app) {
 	app.get('/gallery', routes.views.gallery);
 	app.all('/contact', routes.views.contact);
 
-  app.all('/download', routes.util.download);
-  /*app.post('/download', jsonParser, function(req, res) {
-    var name = req.body.title,
-       color = req.body.message;
-    console.log(name);
-});*/
-
+  app.all('/download', jsonParser, routes.util.download);
 
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
 	// app.get('/protected', middleware.requireUser, routes.views.protected);

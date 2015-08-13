@@ -4,15 +4,16 @@ $(function() {
 
   $('#layout-download').click(function(e){
     e.preventDefault();
-    console.log('button clicked');
 
-    var code = $('#code').prop('outerHTML');
+    var code = $('.pattern').children().map(function() {
+          return $(this).prop('outerHTML');
+    }).get().join("\n\n");
 
-    var data = {};
-    data.title = "title";
-    data.code = code;
+    var form = $('#layout-form');
+    form.append($('<input>', {type: 'hidden',name: 'code', value: code}));
+    form.submit();
 
-    $.ajax({
+    /*$.ajax({
       type: 'POST',
       data: JSON.stringify(data),
           contentType: 'application/json',
@@ -21,7 +22,7 @@ $(function() {
               console.log('success');
               console.log(JSON.stringify(data));
           }
-    });
+    });*/
 
    });
 

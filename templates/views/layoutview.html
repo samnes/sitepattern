@@ -32,7 +32,11 @@
 
 										<div class="panel panel-default">
 					            <div class="panel-body">
-											{{ pattern.code }}
+
+<div class="pattern">
+		{{ pattern.code }}
+</div>
+
 											<a href="{{ filters.originalUrl }}/pattern/{{ pattern.key }}"><h4>{{ pattern.title }}</h4></a>
 											</div>
 				          	</div>
@@ -59,7 +63,9 @@
 
 			<div class="panel panel-default">
 				<div class="panel-body text-center">
-					<a id="layout-download" class="btn btn-rounded btn-dark btn-md" href="#" role="button">Download HTML</a>
+					<form id="layout-form" action="/download" method="POST">
+						<input id="layout-download" class="btn btn-rounded btn-dark btn-md" type="submit" value="Download HTML">
+					</form>
 				</div>
 			</div>
 

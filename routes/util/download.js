@@ -4,14 +4,13 @@ var fs = require('fs');
 
 exports = module.exports = function(req, res){
 
-    var name = req.body.title,
-       code = req.body.code;
-
-    console.log("This is correct:" + name + code);
+    var code = req.body.code;
+    console.log("This is code: " + code);
 
     var archive = archiver('zip');
 
     archive.on('error', function(err) {
+      console.log("This is error");
       res.status(500).send({error: err.message});
     });
 
@@ -27,11 +26,14 @@ exports = module.exports = function(req, res){
     //this is the streaming magic
     archive.pipe(res);
 
-    var files = [__dirname + '/index.html', __dirname + '/hero.html'];
+    archive.append(code, { name: 'index.html' })
 
+    /*var files = [__dirname + '/index.html', __dirname + '/hero.html'];
     for(var i in files) {
+      console.log("This is something");
       archive.append(fs.createReadStream(files[i]), { name: p.basename(files[i]) });
-    }
+    }*/
+
 
     archive.finalize();
 
