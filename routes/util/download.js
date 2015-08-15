@@ -5,7 +5,34 @@ var fs = require('fs');
 exports = module.exports = function(req, res){
 
     var code = req.body.code;
-    console.log("This is code: " + code);
+    /*console.log("This is code: " + code);*/
+
+    // Async file reads
+    var headerData = '';
+    var footerData = '';
+
+    var files = [ p.join(__dirname + '/html/', 'header.html'), p.join(__dirname + '/html/', 'footer.html')];
+
+
+    files.forEach(function (file, i) {
+      fs.readFile(file, 'utf8', function (err, data){
+        if (err) {
+          return console.log(err);
+        }
+
+        if(i === 0){
+          headerData = data;
+          console.log("Header data: " + data);
+        }else{
+          footerData = data;
+          console.log("Footer data: " + data);
+        }
+      })
+    });
+
+    console.log('after calling readFile');
+
+    // Zipping
 
     var archive = archiver('zip');
 
@@ -26,7 +53,7 @@ exports = module.exports = function(req, res){
     //this is the streaming magic
     archive.pipe(res);
 
-    archive.append(code, { name: 'index.html' })
+    archive.append(code, { name: 'index.html' });
 
     /*var files = [__dirname + '/index.html', __dirname + '/hero.html'];
     for(var i in files) {
