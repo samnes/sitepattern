@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "archiver": "^0.14.4",
-    "async": "^0.9.0",
+    "async": "^0.9.2",
     "body-parser": "^1.13.3",
     "consolidate": "^0.10.0",
     "dotenv": "^1.1.0",

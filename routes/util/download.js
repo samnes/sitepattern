@@ -1,6 +1,7 @@
 var archiver = require('archiver');
 var p = require('path');
 var fs = require('fs');
+var async = require('async');
 
 exports = module.exports = function(req, res){
 
@@ -11,10 +12,36 @@ exports = module.exports = function(req, res){
     var headerData = '';
     var footerData = '';
 
-    var files = [ p.join(__dirname + '/html/', 'header.html'), p.join(__dirname + '/html/', 'footer.html')];
+    var files = {header: p.join(__dirname + '/html/', 'header.html'), footer: p.join(__dirname + '/html/', 'footer.html')};
+
+  console.log(async);
+
+    /*async.forEachOf(files, function(file, key, callback) {
+      fs.readFile(file, "utf8", function (err, data) {
+        if (err) return callback(err);
+
+        if(key === header){
+          headerData = data;
+          console.log("Header data: " + data);
+        }else if(key === footer){
+          footerData = data;
+          console.log("Footer data: " + data);
+        }else{
+          console.error(err.message);
+        }
+
+        return callback();
+      })
+    }, function (err) {
+    if (err) console.error(err.message);
+    // configs is now a map of JSON data
+    console.log("Finished reading!");
+  });*/
 
 
-    files.forEach(function (file, i) {
+
+
+    /*files.forEach(function (file, i) {
       fs.readFile(file, 'utf8', function (err, data){
         if (err) {
           return console.log(err);
@@ -28,7 +55,7 @@ exports = module.exports = function(req, res){
           console.log("Footer data: " + data);
         }
       })
-    });
+    });*/
 
     console.log('after calling readFile');
 
