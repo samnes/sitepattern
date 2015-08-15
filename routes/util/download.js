@@ -14,16 +14,14 @@ exports = module.exports = function(req, res){
 
     var files = {header: p.join(__dirname + '/html/', 'header.html'), footer: p.join(__dirname + '/html/', 'footer.html')};
 
-  console.log(async);
-
-    /*async.forEachOf(files, function(file, key, callback) {
+    async.forEachOf(files, function(file, key, callback) {
       fs.readFile(file, "utf8", function (err, data) {
         if (err) return callback(err);
 
-        if(key === header){
+        if(key === 'header'){
           headerData = data;
           console.log("Header data: " + data);
-        }else if(key === footer){
+        }else if(key === 'footer'){
           footerData = data;
           console.log("Footer data: " + data);
         }else{
@@ -36,28 +34,6 @@ exports = module.exports = function(req, res){
     if (err) console.error(err.message);
     // configs is now a map of JSON data
     console.log("Finished reading!");
-  });*/
-
-
-
-
-    /*files.forEach(function (file, i) {
-      fs.readFile(file, 'utf8', function (err, data){
-        if (err) {
-          return console.log(err);
-        }
-
-        if(i === 0){
-          headerData = data;
-          console.log("Header data: " + data);
-        }else{
-          footerData = data;
-          console.log("Footer data: " + data);
-        }
-      })
-    });*/
-
-    console.log('after calling readFile');
 
     // Zipping
 
@@ -88,7 +64,9 @@ exports = module.exports = function(req, res){
       archive.append(fs.createReadStream(files[i]), { name: p.basename(files[i]) });
     }*/
 
-
     archive.finalize();
+  });
+
+
 
 };
