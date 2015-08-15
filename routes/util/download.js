@@ -6,7 +6,6 @@ var async = require('async');
 exports = module.exports = function(req, res){
 
     var code = req.body.code;
-    /*console.log("This is code: " + code);*/
 
     // Async file reads
     var headerData = '';
@@ -56,17 +55,15 @@ exports = module.exports = function(req, res){
     //this is the streaming magic
     archive.pipe(res);
 
-    archive.append(code, { name: 'index.html' });
-
-    /*var files = [__dirname + '/index.html', __dirname + '/hero.html'];
-    for(var i in files) {
-      console.log("This is something");
-      archive.append(fs.createReadStream(files[i]), { name: p.basename(files[i]) });
-    }*/
+    code = headerData + code + footerData;
+    archive.append(code, { name: 'index.html' }).bulk([{
+        expand: true,
+        cwd: './public/downloads/bootstrap',
+        src: ['**'],
+        dest: 'styles'
+    }]);;
 
     archive.finalize();
   });
-
-
 
 };
