@@ -16,11 +16,12 @@ var Types = keystone.Field.Types;
   sites: { type: Types.Relationship, ref: 'Site', many: true },
   patterns: { type: Types.Relationship, ref: 'Pattern', many: true },
  	state: { type: Types.Select, options: 'draft, published, archived', default: 'draft', index: true },
- 	author: { type: Types.Relationship, ref: 'User', index: true },
+ 	author: { type: Types.Relationship, ref: 'User', index: true},
  	publishedDate: { type: Types.Date, index: true, dependsOn: { state: 'published' } },
- 	image: { type: Types.CloudinaryImage },
+ 	image: { type: Types.CloudinaryImage, required: true, initial: false },
   description: { type: Types.Html, wysiwyg: true, height: 150, label: 'Description' },
-  context: { type: Types.Html, wysiwyg: true, height: 150, label: 'Context of use' }
+  context: { type: Types.Html, wysiwyg: true, height: 150, label: 'Context of use' },
+  examples: { type: Types.Html, wysiwyg: true, height: 50, label: 'Links to example sites', note: 'Add bullet list of urls' }
  });
 
 

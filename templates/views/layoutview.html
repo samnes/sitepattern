@@ -24,7 +24,7 @@
 
       <div id="code" class="row hero-panels">
 
-		        <div id="dragcontainer" class="col-md-12 dragcontainer">
+		        <div id="dragcontainer" class="col-md-12">
 
 									{% if data.views.patterns.length %}
 
@@ -74,7 +74,7 @@
 
 
 <div class="sidebar-right">
-		<div class="col-md-12">
+		<div class="sidebar-body col-md-12">
 
 			<div class="panel panel-default">
 				<div class="panel-body text-center">
@@ -131,6 +131,30 @@
 						</div>
 
 						{% endif %}
+
+
+						{% if data.views.examples %}
+
+							<div class="panel panel-default">
+
+									<div class="panel-heading" role="tab" id="headingTwo">
+										<h4 class="panel-title">
+											<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+												Examples of use
+											</a>
+										</h4>
+									</div>
+
+									<div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
+												<div class="panel-body">
+													{{ data.views.examples }}
+												</div>
+									</div>
+
+							</div>
+
+							{% endif %}
+
 
 
 				</div>

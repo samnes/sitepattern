@@ -14,12 +14,13 @@ var Types = keystone.Field.Types;
  Pattern.add({
  	title: { type: String, required: true },
  	state: { type: Types.Select, options: 'draft, published, archived', default: 'draft', index: true },
- 	author: { type: Types.Relationship, ref: 'User', index: true },
+ 	author: { type: Types.Relationship, ref: 'User', index: true},
  	publishedDate: { type: Types.Date, index: true, dependsOn: { state: 'published' } },
   code: { type: Types.Code, height: 400, language: 'html', label: 'HTML code'},
- 	image: { type: Types.CloudinaryImage },
+ 	image: { type: Types.CloudinaryImage, required: true, initial: false },
   description: { type: Types.Html, wysiwyg: true, height: 150, label: 'Description' },
-  context: { type: Types.Html, wysiwyg: true, height: 150, label: 'Context of use' }
+  context: { type: Types.Html, wysiwyg: true, height: 150, label: 'Context of use' },
+  examples: { type: Types.Html, wysiwyg: true, height: 50, label: 'Links to example sites', note: 'Add bullet list of urls' }
  });
 
 

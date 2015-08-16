@@ -25,9 +25,6 @@ exports = module.exports = function(req, res) {
 
 		q.exec(function(err, result) {
 			locals.data.views = result;
-
-			console.log('End result layout ' + locals.data.views);
-
 			next(err);
 		});
 

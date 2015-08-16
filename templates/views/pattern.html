@@ -54,7 +54,7 @@
 
 
 <div class="sidebar-right">
-		<div class="col-md-12">
+		<div class="sidebar-body col-md-12">
 
 			<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 
@@ -102,6 +102,29 @@
 						</div>
 
 						{% endif %}
+
+
+						{% if data.patterns.examples %}
+
+							<div class="panel panel-default">
+
+									<div class="panel-heading" role="tab" id="headingTwo">
+										<h4 class="panel-title">
+											<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+												Examples of use
+											</a>
+										</h4>
+									</div>
+
+									<div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
+												<div class="panel-body">
+													{{ data.patterns.examples }}
+												</div>
+									</div>
+
+							</div>
+
+							{% endif %}
 
 
 				</div>
