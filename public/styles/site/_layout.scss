@@ -126,6 +126,16 @@ h3, .h3 {
 
 .sidebar-body{
 	margin-bottom: 51px;
+	padding: 0;
+}
+
+.sidebar-body .panel{
+	margin-bottom: 0;
+	border-radius: 0;
+	border-top: 0;
+}
+.sidebar-body .panel-group .panel + .panel{
+	margin-top: 0;
 }
 
 .sidebar-left{
