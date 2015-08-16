@@ -13,6 +13,7 @@ exports = module.exports = function(req, res) {
 	};
   locals.data = {
     views: []
+		patterns: []
   };
 
 	// Load the current layout
@@ -29,6 +30,24 @@ exports = module.exports = function(req, res) {
 		});
 
 	});
+
+	// Load all the patterns
+	view.on('init', function(next) {
+
+		/*var q = keystone.list('Layout').model.findOne({
+			state: 'published',
+			key: locals.filters.view
+			}).populate('author sites patterns');
+
+		q.exec(function(err, result) {
+			locals.data.views = result;
+			next(err);
+			*/
+		});
+
+	});
+
+
 
 	// Render the view
 	view.render('layoutview');

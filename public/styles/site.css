@@ -5926,7 +5926,8 @@ h3, .h3 {
   overflow-y: auto; }
 
 .sidebar-thumbnail {
-  border: 2px #2a2b2c solid; }
+  border: 2px #2a2b2c solid;
+  margin-bottom: 15px; }
 
 .sidebar-thumbnail-title {
   padding: 7px;

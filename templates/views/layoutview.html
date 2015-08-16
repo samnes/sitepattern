@@ -18,19 +18,24 @@
 						<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingPatterns">
 									<div class="panel-body">
 
+										{% if data.views.patterns.length %}
+											{% for pattern in data.views.patterns %}
+
 											<div class="sidebar-thumbnail">
-												{% if data.views.image.exists %}
-													<img src="{{ data.views._.image.thumbnail(205,137) }}" class="img">
+												{% if pattern.image.exists %}
+													<img src="{{ pattern._.image.thumbnail(205,137) }}" class="img">
 												{% endif %}
 												<div class="sidebar-thumbnail-title">
-													{{ data.views.title }}
+													{{ pattern.title }}
 												</div>
 											</div>
 
-									</div>
+												{% endfor %}
+										{% endif %}
+								</div>
 						</div>
 
-				</div>
+			 </div>
 
 
 			</div>
