@@ -30,3 +30,26 @@ $border-radius-rounded: 25px;
 $btn-dark-color:              #fff ;
 $btn-dark-bg:                 $brand-dark ;
 $btn-dark-border:             darken($btn-dark-bg, 5%) ;
+
+
+//== Custom containers
+//## Needed for layouts to fit with the sidebars
+$screen-xs:                      480px;
+$screen-sm-min:                  1250px;
+$screen-md-min:                  1474px;
+$screen-lg-min:                  1682px;
+
+// Small screen / tablet
+$container-tablet:             (720px + $grid-gutter-width);
+//** For `$screen-sm-min` and up.
+$container-sm:                 $container-tablet ;
+
+// Medium screen / desktop
+$container-desktop:            (940px + $grid-gutter-width);
+//** For `$screen-md-min` and up.
+$container-md:                 $container-desktop;
+
+// Large screen / wide desktop
+$container-large-desktop:      (1140px + $grid-gutter-width);
+//** For `$screen-lg-min` and up.
+$container-lg:                 $container-large-desktop;

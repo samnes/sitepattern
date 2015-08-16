@@ -17,7 +17,7 @@
 
 body{
 	font-family: $font-family-sans-serif;
-	padding-top: 71px; 
+	padding-top: 51px;
 }
 
 
@@ -44,6 +44,24 @@ h3, .h3 {
   margin-top: $line-height-computed;
   margin-bottom: $line-height-computed;
 }
+
+//== Containers
+//
+
+.container {
+  @include container-fixed;
+
+  @media (min-width: $screen-sm-min) {
+    width: $container-sm;
+  }
+  @media (min-width: $screen-md-min) {
+    width: $container-md;
+  }
+  @media (min-width: $screen-lg-min) {
+    width: $container-lg;
+  }
+}
+
 
 //== Panel
 //
@@ -95,6 +113,8 @@ h3, .h3 {
 .main{
 	height: 100%;
 	overflow: auto;
+	margin-left: 241px;
+  margin-right: 241px;
 }
 
 .sidebar-left{
