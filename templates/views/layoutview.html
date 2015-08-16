@@ -16,15 +16,20 @@
 						</div>
 
 						<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingPatterns">
-									<div class="panel-body">
+									<div id="sidedragcontainer" class="panel-body">
 
 										{% if data.patterns.length %}
 											{% for pattern in data.patterns %}
 
 											<div class="sidebar-thumbnail">
 												{% if pattern.image.exists %}
-													<img src="{{ pattern._.image.thumbnail(205,137) }}" class="img">
+													<img src="{{ pattern._.image.thumbnail(205,137) }}" class="img img-deletable">
 												{% endif %}
+												
+												<div class="code hidden">
+												{{ pattern.code }}
+												</div>
+
 												<div class="sidebar-thumbnail-title">
 													{{ pattern.title }}
 												</div>

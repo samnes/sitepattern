@@ -1,11 +1,15 @@
 $(function() {
 
-  /*Initiate Dragula*/
 
-  dragula([document.querySelector('#dragcontainer')]).on('drop', function (el) {
+  /*Initiate Dragula for sidebar and main view*/
+
+  dragula([document.querySelector('#sidedragcontainer'), document.querySelector('#dragcontainer')]).on('drop', function (el) {
+
     el.className += ' ex-moved';
-  });
+    $(el).find(".img-deletable").remove();
+    $(el).find(".code").removeClass();
 
+  });
 
   /*Post the layout to server*/
 
