@@ -12,7 +12,7 @@ exports = module.exports = function(req, res) {
 		originalUrl: req.originalUrl
 	};
   locals.data = {
-    views: []
+    views: [],
 		patterns: []
   };
 
@@ -34,15 +34,12 @@ exports = module.exports = function(req, res) {
 	// Load all the patterns
 	view.on('init', function(next) {
 
-		/*var q = keystone.list('Layout').model.findOne({
-			state: 'published',
-			key: locals.filters.view
-			}).populate('author sites patterns');
+	  var q = keystone.list('Pattern').model.find().where('state', 'published').sort('-publishedDate');
 
 		q.exec(function(err, result) {
-			locals.data.views = result;
+			locals.data.patterns = result;
 			next(err);
-			*/
+
 		});
 
 	});
