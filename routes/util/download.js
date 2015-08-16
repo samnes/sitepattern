@@ -31,10 +31,8 @@ exports = module.exports = function(req, res){
       })
     }, function (err) {
     if (err) console.error(err.message);
-    // configs is now a map of JSON data
-    console.log("Finished reading!");
 
-    // Zipping
+    // Zipping after reading file reading is done
 
     var archive = archiver('zip');
 

@@ -3,7 +3,35 @@
 {% block intro %}
 
 	 <div class="sidebar-left">
-			<div class="col-md-12">
+			<div class="sidebar-body col-md-12">
+
+				<div class="panel panel-default">
+
+						<div class="panel-heading" role="tab" id="headingPatterns">
+							<h4 class="panel-title">
+								<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+									Blog patterns
+								</a>
+							</h4>
+						</div>
+
+						<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingPatterns">
+									<div class="panel-body">
+
+											<div class="sidebar-thumbnail">
+												{% if data.views.image.exists %}
+													<img src="{{ data.views._.image.thumbnail(205,137) }}" class="img">
+												{% endif %}
+												<div class="sidebar-thumbnail-title">
+													{{ data.views.title }}
+												</div>
+											</div>
+
+									</div>
+						</div>
+
+				</div>
+
 
 			</div>
 	</div>

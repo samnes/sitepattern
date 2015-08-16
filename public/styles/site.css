@@ -5925,6 +5925,15 @@ h3, .h3 {
           backface-visibility: hidden;
   overflow-y: auto; }
 
+.sidebar-thumbnail {
+  border: 2px #2a2b2c solid; }
+
+.sidebar-thumbnail-title {
+  padding: 7px;
+  font-size: 15.4px;
+  background-color: #2a2b2c;
+  color: #fff; }
+
 .gu-mirror {
   position: fixed !important;
   margin: 0 !important;

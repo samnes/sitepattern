@@ -162,6 +162,16 @@ h3, .h3 {
 	overflow-y: auto;
 }
 
+.sidebar-thumbnail{
+	border: 2px $btn-dark-border solid;
+}
+
+.sidebar-thumbnail-title{
+	padding: 7px;
+	font-size: $font-size-base * 1.1;
+	background-color: $btn-dark-border;
+	color: $btn-primary-color;
+}
 
 //== Dragula
 //

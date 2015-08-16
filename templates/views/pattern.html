@@ -5,6 +5,8 @@
 	 <div class="sidebar-left">
 			<div class="col-md-12">
 
+
+
 			</div>
 	</div>
 
@@ -32,11 +34,27 @@
 		            		<img src="{{ data.patterns._.image.thumbnail(326,205) }}" class="img">
 		            	{% endif %}
 
-                  {% if data.patterns.code %}
-                    {{ data.patterns.code }}
-                  {% endif %}
+<div class="pattern">
+    {% if data.patterns.code %}
+      {{ data.patterns.code }}
+    {% endif %}
+</div>
+									<div class="row">
 
-		              <h4>{{ data.patterns.title }}</h4>
+										<div class="col-md-6">
+											<h4>{{ data.patterns.title }}</h4>
+										</div>
+
+										<div class="col-md-6">
+											<div class="button-group pull-right">
+												<form id="layout-form" action="/download" method="POST">
+													<input id="layout-download" class="btn btn-rounded btn-dark btn-md" type="submit" value="Download pattern">
+												</form>
+											</div>
+										</div>
+
+									</div>
+
 
 		            </div>
 		          </div>
