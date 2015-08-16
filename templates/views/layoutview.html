@@ -24,7 +24,7 @@
 
       <div id="code" class="row hero-panels">
 
-		        <div class="col-md-12">
+		        <div id="dragcontainer" class="col-md-12 dragcontainer">
 
 									{% if data.views.patterns.length %}
 
@@ -37,9 +37,24 @@
 		{{ pattern.code }}
 </div>
 
-											<a href="{{ filters.originalUrl }}/pattern/{{ pattern.key }}"><h4>{{ pattern.title }}</h4></a>
+											<div class="row">
+
+												<div class="col-md-6">
+													<a href="{{ filters.originalUrl }}/pattern/{{ pattern.key }}"><h4>{{ pattern.title }}</h4></a>
+												</div>
+
+												<div class="col-md-6">
+													<div class="button-group btn-group pull-right">
+														<!-- <a class="btn btn-default" href="#"><i class="fa fa-arrow-up"></i></a>
+														<a class="btn btn-default" href="#"><i class="fa fa-arrow-down"></i></a> -->
+														<a class="handle btn btn-default" href="#"><i class="fa fa-arrows"></i></a>
+													</div>
+												</div>
+
 											</div>
-				          	</div>
+
+				        	</div>
+								</div>
 										{% endfor %}
 
 									{% else %}

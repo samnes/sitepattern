@@ -1,5 +1,12 @@
 $(function() {
 
+  /*Initiate Dragula*/
+
+  dragula([document.querySelector('#dragcontainer')]).on('drop', function (el) {
+    el.className += ' ex-moved';
+  });
+
+
   /*Post the layout to server*/
 
   $('#layout-download').click(function(e){

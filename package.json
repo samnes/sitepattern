@@ -8,6 +8,7 @@
     "body-parser": "^1.13.3",
     "consolidate": "^0.10.0",
     "dotenv": "^1.1.0",
+    "dragula": "^3.0.3",
     "font-awesome": "^4.4.0",
     "keystone": "^0.3.11",
     "node-sass": "^2.1.1",
