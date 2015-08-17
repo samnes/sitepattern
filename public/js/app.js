@@ -2,14 +2,38 @@ $(function() {
 
 
   /*Initiate Dragula for sidebar and main view*/
+  var dragcontainerId = document.getElementById("dragcontainer").id;
+  var sidedragcontainerId = document.getElementById("sidedragcontainer").id;
 
-  dragula([document.querySelector('#sidedragcontainer'), document.querySelector('#dragcontainer')]).on('drop', function (el) {
+
+  dragula([document.querySelector('#sidedragcontainer'), document.querySelector('#dragcontainer')], {
+    accepts: function (el, target, source, sibling) {
+    var boolean = false;
+
+      if(sidedragcontainerId === source.id){
+        boolean = dragcontainerId === target.id;
+      }else if(dragcontainerId === source.id){
+        boolean = dragcontainerId === target.id;
+      }
+      return boolean;
+
+    }
+
+    }).on('drop', function (el,container, source) {
+
+     if(container != source) {
+         var clonedMovedElem = el.cloneNode(true);
+         clonedMovedElem.classList.remove("gu-transit");
+         source.appendChild(clonedMovedElem);
+     }
 
     el.className += ' ex-moved';
     $(el).find(".img-deletable").remove();
     $(el).find(".code").removeClass();
-
   });
+
+
+
 
   /*Post the layout to server*/
 
