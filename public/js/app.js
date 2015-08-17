@@ -42,7 +42,20 @@ $(function() {
   });
 
   /*Enable deleting patterns*/
+  $("a.delete").click(function(event) {
+      event.preventDefault();
+      $(this).parents('.panel').fadeOut(300, function() {
+        $(this).remove();
 
+        /*Add new container to drag to when there are no patterns in layout*/
+        if($("#dragcontainer").children().length === 0){
+          $("#dragcontainer").html('<p class="info-text">Drag and drop new patterns here from left sidebar.</p>');
+        }
+    });
+
+
+
+  });
 
   /*Hide elements in container for better preview*/
 

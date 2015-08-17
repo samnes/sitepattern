@@ -25,7 +25,7 @@
 												{% if pattern.image.exists %}
 													<img src="{{ pattern._.image.thumbnail(205,137) }}" class="img img-deletable">
 												{% endif %}
-												
+
 												<div class="code hidden">
 												{{ pattern.code }}
 												</div>
@@ -85,7 +85,8 @@
 													<div class="button-group btn-group pull-right">
 														<!-- <a class="btn btn-default" href="#"><i class="fa fa-arrow-up"></i></a>
 														<a class="btn btn-default" href="#"><i class="fa fa-arrow-down"></i></a> -->
-														<a class="handle btn btn-default" href="#"><i class="fa fa-arrows"></i></a>
+														<a class="delete btn btn-default" href="#"><i class="fa fa-trash"> Remove</i></a>
+														<a class="btn btn-default" href="#"><i class="fa fa-arrows"></i></a>
 													</div>
 												</div>
 
