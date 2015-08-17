@@ -39,6 +39,10 @@ $(function() {
     $(el).find(".img-deletable").remove();
     $(el).find(".code").removeClass();
 
+    if($("#info-container").length){
+      $("#info-container").remove();
+    }
+
   });
 
   /*Enable deleting patterns*/
@@ -49,7 +53,7 @@ $(function() {
 
         /*Add new container to drag to when there are no patterns in layout*/
         if($("#dragcontainer").children().length === 0){
-          $("#dragcontainer").html('<p class="info-text">Drag and drop new patterns here from left sidebar.</p>');
+          $("#dragcontainer").html('<div id="info-container" class="well"><h4 class="info-text">Drag and drop new patterns around me from left sidebar.</h4></div>');
         }
     });
 

@@ -70,6 +70,20 @@ h3, .h3 {
 	margin-top: 0;
 }
 
+#code .panel{
+	background-color: transparent;
+	border-radius: 0;
+	border: 2px $btn-dark-border solid;
+}
+
+#code .panel .row{
+	margin: 0;
+}
+
+#code .panel .col-md-6{
+	background-color: $btn-dark-border;
+	padding: 6px 12px;
+}
 //== Buttons
 //
 
