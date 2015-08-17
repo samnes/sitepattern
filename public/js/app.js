@@ -4,7 +4,7 @@ $(function() {
   /*Initiate Dragula for sidebar and main view*/
   var dragcontainerId = document.getElementById("dragcontainer").id;
   var sidedragcontainerId = document.getElementById("sidedragcontainer").id;
-
+  var position = 0;
 
   dragula([document.querySelector('#sidedragcontainer'), document.querySelector('#dragcontainer')], {
     accepts: function (el, target, source, sibling) {
@@ -19,18 +19,27 @@ $(function() {
 
     }
 
+    }).on('drag', function (el) {
+      position = $(el).index();
+
+
     }).on('drop', function (el,container, source) {
 
      if(container != source) {
          var clonedMovedElem = el.cloneNode(true);
          clonedMovedElem.classList.remove("gu-transit");
-         source.appendChild(clonedMovedElem);
+         $(source).children().eq(position).before($(clonedMovedElem).fadeIn(300));
      }
 
-    el.className += ' ex-moved';
     $(el).find(".img-deletable").remove();
     $(el).find(".code").removeClass();
+
   });
+
+  /*Enable deleting patterns*/
+
+
+  /*Hide elements in container for better preview*/
 
 
 
