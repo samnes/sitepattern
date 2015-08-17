@@ -73,17 +73,26 @@ h3, .h3 {
 #code .panel{
 	background-color: transparent;
 	border-radius: 0;
-	border: 2px $btn-dark-border solid;
+	border: 4px $btn-dark-border solid;
 }
 
-#code .panel .row{
-	margin: 0;
-}
-
-#code .panel .col-md-6{
+#code .panel-container .col-md-6{
 	background-color: $btn-dark-border;
+	opacity: 0.97;
 	padding: 6px 12px;
 }
+#code .panel-container .col-md-6 a{
+	color: $btn-primary-color;
+	text-decoration: underline;
+}
+#code .panel-container .col-md-6 .btn-default{
+	background-color: $btn-dark-border;
+}
+
+#code .col-md-6 .btn-default{
+	background-color: $btn-dark-border;
+}
+
 //== Buttons
 //
 
@@ -176,18 +185,38 @@ h3, .h3 {
 	overflow-y: auto;
 }
 
-.sidebar-thumbnail{
+.sidebar-left .sidebar-thumbnail{
 	border: 2px $btn-dark-border solid;
 	margin-bottom: 15px;
 }
 
-.sidebar-thumbnail-title{
-	padding: 7px;
-	font-size: $font-size-base * 1.1;
-	background-color: $btn-dark-border;
-	color: $btn-primary-color;
+.sidebar-thumbnail{
+	border: 4px $btn-dark-border solid;
+	margin-bottom: 20px;
 }
 
+
+.sidebar-thumbnail-title .col-md-12{
+	padding: 3px;
+}
+
+.sidebar-thumbnail-title a {
+	color: $btn-primary-color;
+	text-decoration: underline;
+	margin: 0;
+}
+
+.sidebar-left .sidebar-thumbnail-title{
+	padding: 7px;
+	background-color: $btn-dark-border;
+	color: $btn-primary-color;
+	opacity: 0.97;
+}
+
+.sidebar-left .sidebar-thumbnail-title a h4{
+	margin: 0;
+	font-size: $font-size-base * 1.1;
+}
 //== Dragula
 //
 

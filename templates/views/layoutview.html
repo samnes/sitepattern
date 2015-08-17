@@ -21,7 +21,7 @@
 										{% if data.patterns.length %}
 											{% for pattern in data.patterns %}
 
-											<div class="sidebar-thumbnail">
+											<div class="panel-container sidebar-thumbnail">
 												{% if pattern.image.exists %}
 													<img src="{{ pattern._.image.thumbnail(205,137) }}" class="img img-deletable">
 												{% endif %}
@@ -30,8 +30,12 @@
 												{{ pattern.code }}
 												</div>
 
-												<div class="sidebar-thumbnail-title">
-													{{ pattern.title }}
+												<div class="container-fluid">
+													<div class="sidebar-thumbnail-title row">
+															<div class="col-md-12">
+																<a href="{{ filters.originalUrl }}/pattern/{{ pattern.key }}"><h4>{{ pattern.title }}</h4></a>
+															</div>
+													</div>
 												</div>
 											</div>
 
@@ -68,11 +72,12 @@
 
 										{% for pattern in data.views.patterns %}
 
-										<div class="panel panel-default">
+										<div class="panel panel-default panel-container">
 
 <div class="pattern">
 		{{ pattern.code }}
 </div>
+								<div class="container-fluid">
 
 											<div class="row">
 
@@ -90,7 +95,7 @@
 												</div>
 
 											</div>
-
+									</div>
 								</div>
 										{% endfor %}
 

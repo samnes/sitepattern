@@ -39,6 +39,9 @@ $(function() {
     $(el).find(".img-deletable").remove();
     $(el).find(".code").removeClass();
 
+    $(el).find(".sidebar-thumbnail-title").children().removeClass("col-md-12").addClass("col-md-6");
+    $(el).find(".sidebar-thumbnail-title").append('<div class="col-md-6"><div class="button-group btn-group pull-right"><a class="delete btn btn-default" href="#"><i class="fa fa-trash"> Remove</i></a><a class="btn btn-default" href="#"><i class="fa fa-arrows"></i></a></div></div>');
+
     if($("#info-container").length){
       $("#info-container").remove();
     }
@@ -46,9 +49,9 @@ $(function() {
   });
 
   /*Enable deleting patterns*/
-  $("a.delete").click(function(event) {
+  $("body").on("click","a.delete", function() {
       event.preventDefault();
-      $(this).parents('.panel').fadeOut(300, function() {
+      $(this).parents('.panel-container').fadeOut(300, function() {
         $(this).remove();
 
         /*Add new container to drag to when there are no patterns in layout*/

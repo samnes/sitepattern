@@ -5824,14 +5824,22 @@ h3, .h3 {
 #code .panel {
   background-color: transparent;
   border-radius: 0;
-  border: 2px #2a2b2c solid; }
+  border: 4px #2a2b2c solid; }
 
-#code .panel .row {
-  margin: 0; }
-
-#code .panel .col-md-6 {
+#code .panel-container .col-md-6 {
   background-color: #2a2b2c;
+  opacity: 0.97;
   padding: 6px 12px; }
+
+#code .panel-container .col-md-6 a {
+  color: #fff;
+  text-decoration: underline; }
+
+#code .panel-container .col-md-6 .btn-default {
+  background-color: #2a2b2c; }
+
+#code .col-md-6 .btn-default {
+  background-color: #2a2b2c; }
 
 .btn-rounded {
   border-radius: 25px;
@@ -5937,15 +5945,31 @@ h3, .h3 {
           backface-visibility: hidden;
   overflow-y: auto; }
 
-.sidebar-thumbnail {
+.sidebar-left .sidebar-thumbnail {
   border: 2px #2a2b2c solid;
   margin-bottom: 15px; }
 
-.sidebar-thumbnail-title {
+.sidebar-thumbnail {
+  border: 4px #2a2b2c solid;
+  margin-bottom: 20px; }
+
+.sidebar-thumbnail-title .col-md-12 {
+  padding: 3px; }
+
+.sidebar-thumbnail-title a {
+  color: #fff;
+  text-decoration: underline;
+  margin: 0; }
+
+.sidebar-left .sidebar-thumbnail-title {
   padding: 7px;
-  font-size: 15.4px;
   background-color: #2a2b2c;
-  color: #fff; }
+  color: #fff;
+  opacity: 0.97; }
+
+.sidebar-left .sidebar-thumbnail-title a h4 {
+  margin: 0;
+  font-size: 15.4px; }
 
 .gu-mirror {
   position: fixed !important;
