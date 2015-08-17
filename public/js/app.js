@@ -28,7 +28,12 @@ $(function() {
      if(container != source) {
          var clonedMovedElem = el.cloneNode(true);
          clonedMovedElem.classList.remove("gu-transit");
-         $(source).children().eq(position).before($(clonedMovedElem).fadeIn(300));
+
+         if(position === 0){
+           $(source).eq(position).prepend($(clonedMovedElem).fadeIn(300));
+         }else{
+           $(source).children().eq(position - 1).after($(clonedMovedElem).fadeIn(300));
+         }
      }
 
     $(el).find(".img-deletable").remove();
