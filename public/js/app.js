@@ -22,12 +22,19 @@ $(function() {
     }).on('drag', function (el) {
       position = $(el).index();
 
+      $(el).find(".img-deletable").addClass("hidden");
+      $(el).find(".code").removeClass("hidden");
 
+    }).on('cancel', function (el) {
+      $(el).find(".code").addClass("hidden");
+      $(el).find(".img-deletable").removeClass("hidden");
     }).on('drop', function (el,container, source) {
 
      if(container != source) {
          var clonedMovedElem = el.cloneNode(true);
-         clonedMovedElem.classList.remove("gu-transit");
+         $(clonedMovedElem).find(".code").addClass("hidden");
+         $(clonedMovedElem).find(".img-deletable").removeClass("hidden");
+         $(clonedMovedElem).removeClass("gu-transit");
 
          if(position === 0){
            $(source).eq(position).prepend($(clonedMovedElem).fadeIn(300));
@@ -36,14 +43,16 @@ $(function() {
          }
      }
 
-    $(el).find(".img-deletable").remove();
-    $(el).find(".code").removeClass();
-
+    /*Modify the pattern container dragged from sidebar to match others*/
     if(container != source){
+
+      $(el).find(".img-deletable").remove();
+
       $(el).find(".sidebar-thumbnail-title").children().removeClass("col-md-12").addClass("col-md-6");
       $(el).find(".sidebar-thumbnail-title").append('<div class="col-md-6"><div class="button-group btn-group pull-right"><a class="delete btn btn-default" href="#"><i class="fa fa-trash"> Remove</i></a><a class="btn btn-default" href="#"><i class="fa fa-arrows"></i></a></div></div>');
     }
 
+    /*Remove the container which is shown when every pattern is deleted*/
     if($("#info-container").length){
       $("#info-container").remove();
     }
@@ -72,9 +81,9 @@ $(function() {
       mouseenter: function () {
           //stuff to do on mouse enter
           $(this).stop().css({
-              border: "0px solid #373839"
+              outline: "0px solid #373839"
           }).animate({
-              borderWidth: '4px'
+              outlineWidth: '4px'
           }, 150);
 
           $(this).find('.container-fluid').stop().fadeIn(400).removeClass("hidden");
@@ -82,7 +91,7 @@ $(function() {
       mouseleave: function () {
           //stuff to do on mouse leave
           $(this).stop().animate({
-              borderWidth: 0
+              outlineWidth: 0
           }, 150);
 
           $(this).find('.container-fluid').stop().fadeOut(150);

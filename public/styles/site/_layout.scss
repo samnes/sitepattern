@@ -63,17 +63,27 @@ h3, .h3 {
 }
 
 
-//== Panel
+//== Hero Panel
 //
 
 .hero-panels h2, .hero-panels h3 {
 	margin-top: 0;
 }
 
+
+//== Pattern panel
+//
+
 #code .panel{
 	background-color: transparent;
 	border-radius: 0;
 	border: 4px $btn-dark-border solid;
+}
+
+
+.panel-container {
+	position: relative;
+	cursor:move;
 }
 
 #code .panel-container .col-md-6{
@@ -91,6 +101,10 @@ h3, .h3 {
 
 #code .col-md-6 .btn-default{
 	background-color: $btn-dark-border;
+}
+
+#code .panel-container:hover .arrows-container{
+	opacity: 1;
 }
 
 //== Buttons
@@ -190,9 +204,15 @@ h3, .h3 {
 	margin-bottom: 15px;
 }
 
+// Thumbnail
+
 .sidebar-thumbnail{
-	border: 4px $btn-dark-border solid;
 	margin-bottom: 20px;
+	position: relative;
+}
+
+.sidebar-thumbnail img{
+	width: 100%;
 }
 
 
@@ -217,6 +237,22 @@ h3, .h3 {
 	margin: 0;
 	font-size: $font-size-base * 1.1;
 }
+
+.arrows-container{
+	position: absolute;
+	top: 0;
+	right: 0;
+	background-color: $btn-dark-border;
+	padding: 6px 8px 6px 8px;
+	color: $btn-primary-color;
+}
+
+#code .arrows-container{
+	opacity: 0.1;
+}
+
+
+
 //== Dragula
 //
 
