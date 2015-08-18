@@ -39,8 +39,10 @@ $(function() {
     $(el).find(".img-deletable").remove();
     $(el).find(".code").removeClass();
 
-    $(el).find(".sidebar-thumbnail-title").children().removeClass("col-md-12").addClass("col-md-6");
-    $(el).find(".sidebar-thumbnail-title").append('<div class="col-md-6"><div class="button-group btn-group pull-right"><a class="delete btn btn-default" href="#"><i class="fa fa-trash"> Remove</i></a><a class="btn btn-default" href="#"><i class="fa fa-arrows"></i></a></div></div>');
+    if(container != source){
+      $(el).find(".sidebar-thumbnail-title").children().removeClass("col-md-12").addClass("col-md-6");
+      $(el).find(".sidebar-thumbnail-title").append('<div class="col-md-6"><div class="button-group btn-group pull-right"><a class="delete btn btn-default" href="#"><i class="fa fa-trash"> Remove</i></a><a class="btn btn-default" href="#"><i class="fa fa-arrows"></i></a></div></div>');
+    }
 
     if($("#info-container").length){
       $("#info-container").remove();
@@ -49,7 +51,7 @@ $(function() {
   });
 
   /*Enable deleting patterns*/
-  $("body").on("click","a.delete", function() {
+  $(document).on("click","a.delete", function() {
       event.preventDefault();
       $(this).parents('.panel-container').fadeOut(300, function() {
         $(this).remove();
@@ -66,7 +68,26 @@ $(function() {
 
   /*Hide elements in container for better preview*/
 
+  $(document).on({
+      mouseenter: function () {
+          //stuff to do on mouse enter
+          $(this).stop().css({
+              border: "0px solid #373839"
+          }).animate({
+              borderWidth: '4px'
+          }, 150);
 
+          $(this).find('.container-fluid').stop().fadeIn(400).removeClass("hidden");
+      },
+      mouseleave: function () {
+          //stuff to do on mouse leave
+          $(this).stop().animate({
+              borderWidth: 0
+          }, 150);
+
+          $(this).find('.container-fluid').stop().fadeOut(150);
+      }
+  }, "#code .panel-container");
 
 
   /*Post the layout to server*/
