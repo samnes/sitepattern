@@ -24,6 +24,7 @@ $(function() {
 
       $(el).find(".img-deletable").addClass("hidden");
       $(el).find(".code").removeClass("hidden");
+      $(el).addClass("container");
 
     }).on('cancel', function (el) {
       $(el).find(".code").addClass("hidden");
@@ -34,6 +35,7 @@ $(function() {
          var clonedMovedElem = el.cloneNode(true);
          $(clonedMovedElem).find(".code").addClass("hidden");
          $(clonedMovedElem).find(".img-deletable").removeClass("hidden");
+         $(clonedMovedElem).removeClass("container");
          $(clonedMovedElem).removeClass("gu-transit");
 
          if(position === 0){
@@ -47,6 +49,7 @@ $(function() {
     if(container != source){
 
       $(el).find(".img-deletable").remove();
+      $(el).removeClass("container");
 
       $(el).find(".sidebar-thumbnail-title").children().removeClass("col-md-12").addClass("col-md-6");
       $(el).find(".sidebar-thumbnail-title").append('<div class="col-md-6"><div class="button-group btn-group pull-right"><a class="delete btn btn-default" href="#"><i class="fa fa-trash"> Remove</i></a><a class="btn btn-default" href="#"><i class="fa fa-arrows"></i></a></div></div>');
@@ -81,9 +84,11 @@ $(function() {
       mouseenter: function () {
           //stuff to do on mouse enter
           $(this).stop().css({
-              outline: "0px solid #373839"
+              outline: "0px solid #373839",
+              marginBottom: "0px"
           }).animate({
-              outlineWidth: '4px'
+              outlineWidth: '4px',
+              marginBottom: "20px"
           }, 150);
 
           $(this).find('.container-fluid').stop().fadeIn(400).removeClass("hidden");
