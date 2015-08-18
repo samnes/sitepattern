@@ -45,11 +45,12 @@ $(function() {
          }
      }
 
+     $(el).removeClass("container");
+
     /*Modify the pattern container dragged from sidebar to match others*/
     if(container != source){
 
       $(el).find(".img-deletable").remove();
-      $(el).removeClass("container");
 
       $(el).find(".sidebar-thumbnail-title").children().removeClass("col-md-12").addClass("col-md-6");
       $(el).find(".sidebar-thumbnail-title").append('<div class="col-md-6"><div class="button-group btn-group pull-right"><a class="delete btn btn-default" href="#"><i class="fa fa-trash"> Remove</i></a><a class="btn btn-default" href="#"><i class="fa fa-arrows"></i></a></div></div>');
