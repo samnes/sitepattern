@@ -52,7 +52,7 @@ h3, .h3 {
 //== Containers
 //
 
-.container {
+.container-sidebars {
   @include container-fixed;
 
   @media (min-width: $screen-sm-min) {

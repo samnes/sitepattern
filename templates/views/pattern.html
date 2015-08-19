@@ -13,7 +13,7 @@
 
 <div class="main">
 
-	<div class="container">
+	<div class="container-sidebars">
 		<h1> {{ data.patterns.title }} pattern</h1>
 	</div>
 
@@ -21,7 +21,7 @@
 
 
 {% block content %}
-  <div class="container">
+  <div class="container-sidebars">
     {% if data.patterns %}
 
       <div id="code" class="row hero-panels">
@@ -30,7 +30,7 @@
 		          <div class="panel panel-default">
 		            <div class="panel-body">
 
-		
+
 <div class="pattern">
     {% if data.patterns.code %}
       {{ data.patterns.code }}

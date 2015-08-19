@@ -48,6 +48,10 @@ $screen-sm-min:                  1250px;
 $screen-md-min:                  1474px;
 $screen-lg-min:                  1682px;
 
+
+//** Padding between columns. Gets divided in half for the left and right.
+$grid-gutter-width:         30px !default;
+
 // Small screen / tablet
 $container-tablet:             (720px + $grid-gutter-width);
 //** For `$screen-sm-min` and up.
