@@ -22,23 +22,28 @@ $(function() {
     }).on('drag', function (el) {
       position = $(el).index();
 
-      $(el).find(".img-deletable").addClass("hidden");
-      $(el).find(".code").removeClass("hidden");
-      $(el).addClass("container");
+      var element = $(el);
+      element.find(".img-deletable").addClass("hidden");
+      element.find(".code").removeClass("hidden");
+      element.addClass("container");
 
     }).on('cancel', function (el) {
-      $(el).find(".code").addClass("hidden");
-      $(el).find(".img-deletable").removeClass("hidden");
-      $(el).removeClass("container");
-      
+
+      var element = $(el);
+      element.find(".code").addClass("hidden");
+      element.find(".img-deletable").removeClass("hidden");
+      element.removeClass("container");
+
     }).on('drop', function (el,container, source) {
 
      if(container != source) {
          var clonedMovedElem = el.cloneNode(true);
-         $(clonedMovedElem).find(".code").addClass("hidden");
-         $(clonedMovedElem).find(".img-deletable").removeClass("hidden");
-         $(clonedMovedElem).removeClass("container");
-         $(clonedMovedElem).removeClass("gu-transit");
+         clonedMovedElem = $(clonedMovedElem);
+
+         clonedMovedElem.find(".code").addClass("hidden");
+         clonedMovedElem.find(".img-deletable").removeClass("hidden");
+         clonedMovedElem.removeClass("container");
+         clonedMovedElem.removeClass("gu-transit");
 
          if(position === 0){
            $(source).eq(position).prepend($(clonedMovedElem).fadeIn(300));
@@ -52,10 +57,11 @@ $(function() {
     /*Modify the pattern container dragged from sidebar to match others*/
     if(container != source){
 
-      $(el).find(".img-deletable").remove();
+      var element = $(el);
+      element.find(".img-deletable").remove();
 
-      $(el).find(".sidebar-thumbnail-title").children().removeClass("col-md-12").addClass("col-md-6");
-      $(el).find(".sidebar-thumbnail-title").append('<div class="col-md-6"><div class="button-group btn-group pull-right"><a class="delete btn btn-default" href="#"><i class="fa fa-trash"> Remove</i></a><a class="btn btn-default" href="#"><i class="fa fa-arrows"></i></a></div></div>');
+      element.find(".sidebar-thumbnail-title").children().removeClass("col-md-12").addClass("col-md-6");
+      element.find(".sidebar-thumbnail-title").append('<div class="col-md-6"><div class="button-group btn-group pull-right"><a class="delete btn btn-default" href="#"><i class="fa fa-trash"> Remove</i></a><a class="btn btn-default" href="#"><i class="fa fa-arrows"></i></a></div></div>');
     }
 
     /*Remove the container which is shown when every pattern is deleted*/
