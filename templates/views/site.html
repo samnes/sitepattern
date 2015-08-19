@@ -14,17 +14,20 @@
       {% for site in data.sites %}
 
         <div class="col-md-4">
-          <div class="panel panel-default">
-            <div class="panel-body">
 
-              {% if site.image.exists %}
-            		<img src="{{ site._.image.thumbnail(326,205) }}" class="img">
-            	{% endif %}
+					<a class="panel-link" href="/site/layout/{{ site.key }}">
+	          <div class="panel-brand panel-brand-white panel-default ">
+	            <div class="panel-body">
 
-                <a href="/site/layout/{{ site.key }}"><h4>{{ site.title }}</h4></a>
+	              {% if site.image.exists %}
+	            		<img src="{{ site._.image.thumbnail(326,205) }}" class="img">
+	            	{% endif %}
 
-            </div>
-          </div>
+	                <h4>{{ site.title }}</h4>
+
+	            </div>
+	          </div>
+					</a>
         </div>
 
         {% if loop.index % 3 == 0 %}

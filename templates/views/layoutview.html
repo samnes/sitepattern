@@ -21,7 +21,7 @@
 										{% if data.patterns.length %}
 											{% for pattern in data.patterns %}
 
-											<div class="panel-container sidebar-thumbnail">
+											<div class="panel-container sidebar-thumbnail panel-link">
 												{% if pattern.image.exists %}
 													<img src="{{ pattern._.image.thumbnail(205,137) }}" class="img img-deletable">
 												{% endif %}
@@ -76,7 +76,7 @@
 
 										{% for pattern in data.views.patterns %}
 
-										<div class="panel-default panel-container">
+										<div class="panel-default panel-container panel-link">
 
 											<div class="arrows-container">
 												<i class="fa fa-arrows"></i>

@@ -15,17 +15,20 @@
       {% for layout in data.selected %}
 
         <div class="col-md-4">
-          <div class="panel panel-default">
-            <div class="panel-body">
 
-              {% if layout.image.exists %}
-            		<img src="{{ layout._.image.thumbnail(326,205) }}" class="img">
-            	{% endif %}
+					<a class="panel-link" href="/site/layout/{{ data.layout.key }}/view/{{ layout.key }}">
+	          <div class="panel-brand panel-brand-white">
+	            <div class="panel-body">
 
-							<a href="/site/layout/{{ data.layout.key }}/view/{{ layout.key }}"><h4>{{ layout.title }}</h4></a>
+	              {% if layout.image.exists %}
+	            		<img src="{{ layout._.image.thumbnail(326,205) }}" class="img">
+	            	{% endif %}
 
-            </div>
-          </div>
+								<h4>{{ layout.title }}</h4>
+
+	            </div>
+	          </div>
+					</a>
         </div>
 
         {% if loop.index % 3 == 0 %}
