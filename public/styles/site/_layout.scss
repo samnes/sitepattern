@@ -25,6 +25,10 @@ body{
 	height: 100%;
 }
 
+.bg{
+	background-color: $brand-dark-secondary;
+}
+
 //== Navbar
 //
 
@@ -73,17 +77,89 @@ h3, .h3 {
 .front-page.container .jumbotron{
 	border-radius: 0;
 	background-color: $brand-dark-secondary;
+	padding-top: 30px;
+	padding-bottom: 0px;
+	margin-bottom: 0px;
 }
 .front-page.container .jumbotron h1{
 		color: $brand-white;
 }
 
 // Panels
-.panel-header{
-	margin-bottom: 10px;
-	background-color: #fff;
+.panel-brand{
+		font-weight: 300;
+		margin-bottom: 10px;
+		color: $brand-white;
+		background-color: $brand-dark-secondary;
+		font-size: 18px;
 }
 
+.panel-feature{
+	color: $brand-white;
+	font-weight: 300;
+	color: $brand-dark-secondary;
+	margin-bottom: 2px;
+
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.panel-feature .panel-body{
+	min-height: 372px;
+	position: relative;
+}
+
+.panel-blue{
+	background-color: $brand-blue;
+}
+.panel-light-blue{
+	background-color: $brand-light-blue;
+}
+
+.panel-teal{
+	background-color: $brand-teal;
+}
+
+.panel-green{
+	background-color: $brand-green;
+}
+
+.panel-site{
+	background-image: url('/images/site_types.jpg');
+
+}
+
+.panel-layout{
+	background-image: url('/images/site_layouts.jpg');
+}
+
+.panel-pattern{
+	background-image: url('/images/site_patterns.jpg');
+}
+
+.panel-download{
+	background-image: url('/images/site_downloads.jpg');
+}
+
+.panel-text{
+	max-width: 180px;
+	margin: auto;
+}
+
+.panel-site-text{
+	margin-top: 255px;
+}
+
+.panel-layout-text{
+	margin-top: 20px;
+}
+
+.panel-pattern-text{
+	margin-top: 255px;
+}
+
+.panel-download-text{
+	margin-top: 255px;
+}
 
 //== Pattern panel
 //

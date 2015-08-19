@@ -1,6 +1,7 @@
 {% extends "templates/layouts/default.html" %}
 
 {% block content %}
+<div class="bg">
 	<div class="container front-page">
 		<div class="jumbotron">
 			<h1>Start building websites by combining patterns</h1>
@@ -11,37 +12,74 @@
 				<div class="row hero-panels">
 
 						<div class="col-md-3">
-							<div class="panel-header panel-blue">
+
+							<div class="panel-brand panel-blue">
 								<div class="panel-body">
 									1. Select site type
 								</div>
 							</div>
 
-							
+							<div class="panel-brand panel-feature panel-blue panel-site">
+								<div class="panel-body">
+									<div class="panel-text  panel-site-text">
+									Each site type features selection of layouts
+									</div>
+								</div>
+							</div>
+
 						</div>
 
 						<div class="col-md-3">
-							<div class="panel-header panel-light-blue">
+
+							<div class="panel-brand panel-light-blue">
 								<div class="panel-body">
 									2. Select layout
 									</div>
 							</div>
+
+							<div class="panel-brand panel-feature panel-light-blue panel-layout">
+								<div class="panel-body">
+									<div class="panel-text  panel-layout-text">
+									Each layout features selection of patterns
+									</div>
+								</div>
+							</div>
+
 						</div>
 
 						<div class="col-md-3">
-							<div class="panel-header panel-teal">
+							<div class="panel-brand panel-teal">
 								<div class="panel-body">
 									3. Customize with patterns
 								</div>
 							</div>
+
+							<div class="panel-brand panel-feature panel-teal panel-pattern">
+								<div class="panel-body">
+									<div class="panel-text  panel-pattern-text">
+									Drag and drop patterns around for <br> a custom layout
+									</div>
+								</div>
+							</div>
+
 						</div>
 
 						<div class="col-md-3">
-							<div class="panel-header panel-green">
+							<div class="panel-brand panel-green">
 								<div class="panel-body">
 									4. Get the code
 								</div>
 							</div>
+
+							<div class="panel-brand panel-feature panel-green panel-download">
+								<div class="panel-body">
+									<div class="panel-text  panel-download-text">
+									Download layout with Bootstrap styles for further development
+									</div>
+								</div>
+							</div>
+
+
 						</div>
 
 
@@ -50,7 +88,7 @@
 		</div>
 	</div>
 
-	<div class="container">
+	<!-- <div class="container"> -->
       <!-- row of 3 columns -->
 
       <!-- <div class="row hero-panels">
@@ -89,6 +127,6 @@
 
     </div> -->
 
-
+</div>
 
 {% endblock %}
