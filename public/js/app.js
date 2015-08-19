@@ -29,6 +29,8 @@ $(function() {
     }).on('cancel', function (el) {
       $(el).find(".code").addClass("hidden");
       $(el).find(".img-deletable").removeClass("hidden");
+      $(el).removeClass("container");
+      
     }).on('drop', function (el,container, source) {
 
      if(container != source) {
