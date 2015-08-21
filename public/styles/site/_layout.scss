@@ -46,26 +46,26 @@ h2, .h2,
 h3, .h3 {
 	font-family: $font-family-serif;
 
-  margin-top: $line-height-computed;
-  margin-bottom: $line-height-computed;
+  // margin-top: $line-height-computed;
+  // margin-bottom: $line-height-computed;
 }
 
 //== Containers
 //
 
-.container-sidebars {
-  @include container-fixed;
-
-  @media (min-width: $screen-sm-min) {
-    width: $container-sm;
-  }
-  @media (min-width: $screen-md-min) {
-    width: $container-md;
-  }
-  @media (min-width: $screen-lg-min) {
-    width: $container-lg;
-  }
-}
+// .container-sidebars {
+//   @include container-fixed;
+//
+//   @media (min-width: $screen-sm-min) {
+//     width: $container-sm;
+//   }
+//   @media (min-width: $screen-md-min) {
+//     width: $container-md;
+//   }
+//   @media (min-width: $screen-lg-min) {
+//     width: $container-lg;
+//   }
+// }
 
 .container-top{
 	padding-top: 18px;
@@ -244,14 +244,6 @@ h3, .h3 {
 
 .jumbotron {
 	text-align: center;
-	ul{
-		padding-top: $padding-base-vertical;
-		padding-bottom: $padding-base-vertical;
-	}
-	ul li{
-		list-style: none;
-		font-size: $font-size-h3;
-	}
 
 @media screen and (min-width: $screen-sm-min) {
 
