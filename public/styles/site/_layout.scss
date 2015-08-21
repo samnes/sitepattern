@@ -89,33 +89,35 @@ h3, .h3 {
 		color: $brand-white;
 }
 
-// Panels
-.panel-brand{
+// Cards
+.card-brand{
 		font-weight: 300;
 		margin-bottom: 10px;
 		color: $brand-white;
 		background-color: $brand-dark-secondary;
 		font-size: 18px;
 		box-shadow: 0px 6px 20px 2px rgba(46,46,46,0.2);
+		border: none;
+		border-radius: 0;
 }
 
-.panel-brand-white{
+.card-brand-white{
 	background-color: $brand-white;
 	box-shadow: 0px 6px 20px 2px rgba(184,184,184,0.7);
 }
 
-.panel-brand h4{
+.card-brand h4{
 	color: $brand-dark-secondary;
 	margin-top: 20px;
 	margin-bottom: 10px;
 }
 
-.panel-link:hover .panel-brand-white, .panel-link:hover {
+.card-container-link:hover .card-brand-white, .card-container-link:hover {
 	box-shadow: 0px 6px 30px 2px rgba(100,100,100,0.7);
 	transition: box-shadow 0.2s linear;
 }
 
-.panel-feature{
+.card-feature{
 	color: $brand-white;
 	font-weight: 300;
 	color: $brand-dark-secondary;
@@ -124,89 +126,95 @@ h3, .h3 {
 	background-repeat: no-repeat;
 	background-position: center;
 }
-.panel-feature .panel-body{
+.card-feature .card-block{
 	min-height: 372px;
 	position: relative;
+	padding: 0.25rem;
 }
 
-.panel-blue{
+.card-blue{
 	background-color: $brand-blue;
 }
-.panel-light-blue{
+.card-light-blue{
 	background-color: $brand-light-blue;
 }
 
-.panel-teal{
+.card-teal{
 	background-color: $brand-teal;
 }
 
-.panel-green{
+.card-green{
 	background-color: $brand-green;
 }
 
-.panel-site{
+.card-site{
 	background-image: url('/images/site_types.jpg');
 
 }
 
-.panel-layout{
+.card-layout{
 	background-image: url('/images/site_layouts.jpg');
 }
 
-.panel-pattern{
+.card-pattern{
 	background-image: url('/images/site_patterns.jpg');
 }
 
-.panel-download{
+.card-download{
 	background-image: url('/images/site_downloads.jpg');
 }
 
-.panel-text{
+.card-text{
 	max-width: 180px;
 	margin: auto;
 }
 
-.panel-site-text{
+.card-site-text{
 	margin-top: 255px;
 }
 
-.panel-layout-text{
+.card-layout-text{
 	margin-top: 20px;
 }
 
-.panel-pattern-text{
+.card-pattern-text{
 	margin-top: 255px;
 }
 
-.panel-download-text{
+.card-download-text{
 	margin-top: 255px;
 }
 
-//== Pattern panel
+//== Pattern cards
 //
 
-#code .panel{
+#code .card{
 	background-color: transparent;
 	border-radius: 0;
 	border: 4px $btn-dark-border solid;
 }
 
 
-.panel-container {
+.card-container {
 	position: relative;
 	cursor:move;
 }
 
-#code .panel-container .col-md-6{
+#code .card-container .col-md-6{
 	background-color: $btn-dark-border;
 	opacity: 0.97;
 	padding: 6px 12px;
 }
-#code .panel-container .col-md-6 a{
+#code .card-container .col-md-6 a{
 	color: $btn-primary-color;
 	text-decoration: underline;
 }
-#code .panel-container .col-md-6 .btn-default{
+
+#code .card-container .col-md-6 a h4{
+	margin-top: 0.6rem;
+}
+
+#code .card-container .col-md-6 .btn-default{
 	background-color: $btn-dark-border;
 }
 
@@ -214,7 +222,7 @@ h3, .h3 {
 	background-color: $btn-dark-border;
 }
 
-#code .panel-container:hover .arrows-container{
+#code .card-container:hover .arrows-container{
 	opacity: 1;
 }
 
@@ -271,12 +279,12 @@ h3, .h3 {
 	padding: 0;
 }
 
-.sidebar-body .panel{
+.sidebar-body .card{
 	margin-bottom: 0;
 	border-radius: 0;
 	border-top: 0;
 }
-.sidebar-body .panel-group .panel + .panel{
+.sidebar-body .card-group .card + .card{
 	margin-top: 0;
 }
 

@@ -16,12 +16,12 @@
 
         <div class="col-md-4">
 
-					<a class="panel-link" href="/site/layout/{{ data.layout.key }}/view/{{ layout.key }}">
-	          <div class="panel-brand panel-brand-white">
-	            <div class="panel-body">
+					<a class="card-container-link" href="/site/layout/{{ data.layout.key }}/view/{{ layout.key }}">
+	          <div class="card-brand card-brand-white">
+	            <div class="card-block">
 
 	              {% if layout.image.exists %}
-	            		<img src="{{ layout._.image.thumbnail(326,205) }}" class="img">
+	            		<img src="{{ layout._.image.thumbnail(326,205) }}" class="img img-responsive">
 	            	{% endif %}
 
 								<h4>{{ layout.title }}</h4>

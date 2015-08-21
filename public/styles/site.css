@@ -4756,28 +4756,30 @@ h3, .h3 {
 .front-page.container .jumbotron h1 {
   color: #fff; }
 
-.panel-brand {
+.card-brand {
   font-weight: 300;
   margin-bottom: 10px;
   color: #fff;
   background-color: #4A4A4A;
   font-size: 18px;
-  box-shadow: 0px 6px 20px 2px rgba(46, 46, 46, 0.2); }
+  box-shadow: 0px 6px 20px 2px rgba(46, 46, 46, 0.2);
+  border: none;
+  border-radius: 0; }
 
-.panel-brand-white {
+.card-brand-white {
   background-color: #fff;
   box-shadow: 0px 6px 20px 2px rgba(184, 184, 184, 0.7); }
 
-.panel-brand h4 {
+.card-brand h4 {
   color: #4A4A4A;
   margin-top: 20px;
   margin-bottom: 10px; }
 
-.panel-link:hover .panel-brand-white, .panel-link:hover {
+.card-container-link:hover .card-brand-white, .card-container-link:hover {
   box-shadow: 0px 6px 30px 2px rgba(100, 100, 100, 0.7);
   transition: box-shadow 0.2s linear; }
 
-.panel-feature {
+.card-feature {
   color: #fff;
   font-weight: 300;
   color: #4A4A4A;
@@ -4785,75 +4787,79 @@ h3, .h3 {
   background-repeat: no-repeat;
   background-position: center; }
 
-.panel-feature .panel-body {
+.card-feature .card-block {
   min-height: 372px;
-  position: relative; }
+  position: relative;
+  padding: 0.25rem; }
 
-.panel-blue {
+.card-blue {
   background-color: #0091EA; }
 
-.panel-light-blue {
+.card-light-blue {
   background-color: #00B8D4; }
 
-.panel-teal {
+.card-teal {
   background-color: #00BFA5; }
 
-.panel-green {
+.card-green {
   background-color: #00C853; }
 
-.panel-site {
+.card-site {
   background-image: url("/images/site_types.jpg"); }
 
-.panel-layout {
+.card-layout {
   background-image: url("/images/site_layouts.jpg"); }
 
-.panel-pattern {
+.card-pattern {
   background-image: url("/images/site_patterns.jpg"); }
 
-.panel-download {
+.card-download {
   background-image: url("/images/site_downloads.jpg"); }
 
-.panel-text {
+.card-text {
   max-width: 180px;
   margin: auto; }
 
-.panel-site-text {
+.card-site-text {
   margin-top: 255px; }
 
-.panel-layout-text {
+.card-layout-text {
   margin-top: 20px; }
 
-.panel-pattern-text {
+.card-pattern-text {
   margin-top: 255px; }
 
-.panel-download-text {
+.card-download-text {
   margin-top: 255px; }
 
-#code .panel {
+#code .card {
   background-color: transparent;
   border-radius: 0;
   border: 4px #2a2b2c solid; }
 
-.panel-container {
+.card-container {
   position: relative;
   cursor: move; }
 
-#code .panel-container .col-md-6 {
+#code .card-container .col-md-6 {
   background-color: #2a2b2c;
   opacity: 0.97;
   padding: 6px 12px; }
 
-#code .panel-container .col-md-6 a {
+#code .card-container .col-md-6 a {
   color: #fff;
   text-decoration: underline; }
 
-#code .panel-container .col-md-6 .btn-default {
+#code .card-container .col-md-6 a h4 {
+  margin-top: 0.6rem; }
+
+#code .card-container .col-md-6 .btn-default {
   background-color: #2a2b2c; }
 
 #code .col-md-6 .btn-default {
   background-color: #2a2b2c; }
 
-#code .panel-container:hover .arrows-container {
+#code .card-container:hover .arrows-container {
   opacity: 1; }
 
 .btn-rounded {
@@ -4889,12 +4895,12 @@ h3, .h3 {
   margin-bottom: 51px;
   padding: 0; }
 
-.sidebar-body .panel {
+.sidebar-body .card {
   margin-bottom: 0;
   border-radius: 0;
   border-top: 0; }
 
-.sidebar-body .panel-group .panel + .panel {
+.sidebar-body .card-group .card + .card {
   margin-top: 0; }
 
 .sidebar-left {

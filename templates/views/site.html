@@ -15,12 +15,12 @@
 
         <div class="col-md-4">
 
-					<a class="panel-link" href="/site/layout/{{ site.key }}">
-	          <div class="panel-brand panel-brand-white panel-default ">
-	            <div class="panel-body">
+					<a class="card-container-link" href="/site/layout/{{ site.key }}">
+	          <div class="card-brand card-brand-white card-default ">
+	            <div class="card-block">
 
 	              {% if site.image.exists %}
-	            		<img src="{{ site._.image.thumbnail(326,205) }}" class="img">
+	            		<img src="{{ site._.image.thumbnail(326,205) }}" class="img img-responsive">
 	            	{% endif %}
 
 	                <h4>{{ site.title }}</h4>

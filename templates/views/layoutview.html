@@ -5,23 +5,23 @@
 	 <div class="sidebar-left">
 			<div class="sidebar-body col-md-12">
 
-				<div class="panel panel-default">
+				<div class="card">
 
-						<div class="panel-heading" role="tab" id="headingPatterns">
-							<h4 class="panel-title">
+						<div class="card-header" role="tab" id="headingPatterns">
+							<h4 class="card-title">
 								<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
 									Blog patterns
 								</a>
 							</h4>
 						</div>
 
-						<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingPatterns">
-									<div id="sidedragcontainer" class="panel-body">
+						<div id="collapseOne" class="card-collapse collapse in" role="tabpanel" aria-labelledby="headingPatterns">
+									<div id="sidedragcontainer" class="card-block">
 
 										{% if data.patterns.length %}
 											{% for pattern in data.patterns %}
 
-											<div class="panel-container sidebar-thumbnail panel-link">
+											<div class="card-container sidebar-thumbnail card-container-link">
 												{% if pattern.image.exists %}
 													<img src="{{ pattern._.image.thumbnail(205,137) }}" class="img img-deletable">
 												{% endif %}
@@ -30,7 +30,7 @@
 													<i class="fa fa-arrows"></i>
 												</div>
 
-												<div class="code hidden">
+												<div class="code hidden" hidden>
 												{{ pattern.code }}
 												</div>
 
@@ -57,7 +57,7 @@
 
 <div class="main">
 
-	<div class="container-sidebars">
+	<div class="container container-sidebars">
 		<h1> {{ data.views.title }} layout</h1>
 	</div>
 
@@ -65,10 +65,10 @@
 
 
 {% block content %}
-  <div class="container-sidebars">
+  <div class="container container-sidebars">
     {% if data.views %}
 
-      <div id="code" class="row hero-panels">
+      <div id="code" class="row hero-cards">
 
 		        <div id="dragcontainer" class="col-md-12">
 
@@ -76,7 +76,7 @@
 
 										{% for pattern in data.views.patterns %}
 
-										<div class="panel-default panel-container panel-link">
+										<div class="card-container card-container-link">
 
 											<div class="arrows-container">
 												<i class="fa fa-arrows"></i>
@@ -123,8 +123,8 @@
 <div class="sidebar-right">
 		<div class="sidebar-body col-md-12">
 
-			<div class="panel panel-default">
-				<div class="panel-body text-center">
+			<div class="card">
+				<div class="card-body text-center">
 					<form id="layout-form" action="/download" method="POST">
 						<input id="layout-download" class="btn btn-rounded btn-dark btn-md" type="submit" value="Download HTML">
 					</form>
@@ -132,22 +132,22 @@
 			</div>
 
 
-			<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+			<div class="accordion" id="accordion" role="tablist" aria-multiselectable="true">
 
 				{% if data.views.description %}
 
-					<div class="panel panel-default">
+					<div class="card">
 
-							<div class="panel-heading" role="tab" id="headingOne">
-					      <h4 class="panel-title">
+							<div class="card-header" role="tab" id="headingOne">
+					      <h4 class="card-title">
 					        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
 					          Description
 					        </a>
 					      </h4>
 					    </div>
 
-							<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-					      <div class="panel-body">
+							<div id="collapseOne" class="card-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+					      <div class="card-block">
 									{{ data.views.description }}
 								</div>
 							</div>
@@ -159,18 +159,18 @@
 
 					{% if data.views.context %}
 
-						<div class="panel panel-default">
+						<div class="card">
 
-								<div class="panel-heading" role="tab" id="headingTwo">
-									<h4 class="panel-title">
+								<div class="card-header" role="tab" id="headingTwo">
+									<h4 class="card-title">
 										<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
 											Context of use
 										</a>
 									</h4>
 								</div>
 
-								<div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
-											<div class="panel-body">
+								<div id="collapseTwo" class="card-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
+											<div class="card-block">
 												{{ data.views.context }}
 											</div>
 								</div>
@@ -182,18 +182,18 @@
 
 						{% if data.views.examples %}
 
-							<div class="panel panel-default">
+							<div class="card">
 
-									<div class="panel-heading" role="tab" id="headingTwo">
-										<h4 class="panel-title">
+									<div class="card-header" role="tab" id="headingTwo">
+										<h4 class="card-title">
 											<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
 												Examples of use
 											</a>
 										</h4>
 									</div>
 
-									<div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
-												<div class="panel-body">
+									<div id="collapseThree" class="card-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
+												<div class="card-block">
 													{{ data.views.examples }}
 												</div>
 									</div>
@@ -201,7 +201,6 @@
 							</div>
 
 							{% endif %}
-
 
 
 				</div>
