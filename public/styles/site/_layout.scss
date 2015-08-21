@@ -21,6 +21,7 @@ body{
 }
 
 
+
 #body, body, html{
 	height: 100%;
 }
@@ -34,6 +35,7 @@ body{
 
 .navbar{
 	margin-bottom: 0px;
+	border-bottom: 1px $brand-light-gray solid;
 }
 
 
@@ -67,6 +69,11 @@ h3, .h3 {
 
 .container-top{
 	padding-top: 18px;
+}
+
+.container-sidebars{
+	margin-top: 20px;
+	margin-bottom: 20px;
 }
 
 //== Hero
@@ -245,6 +252,11 @@ h3, .h3 {
 	color: $brand-white;
 }
 
+.btn-dark-green{
+	background-color: $brand-dark-green;
+	color: $brand-white;
+}
+
 //== Jumbotron
 //
 
@@ -298,6 +310,8 @@ h3, .h3 {
 }
 
 .sidebar-right{
+	font-size: 0.875rem;
+
 	position: fixed;
 	width: 241px;
 	height: 100%;
@@ -313,6 +327,14 @@ h3, .h3 {
 .sidebar-left .sidebar-thumbnail{
 	border: 2px $btn-dark-border solid;
 	margin-bottom: 15px;
+}
+
+.sidebar-body .card-title{
+	margin-bottom: 0;
+}
+
+.card-collapse{
+	background-color: $brand-white;
 }
 
 // Thumbnail

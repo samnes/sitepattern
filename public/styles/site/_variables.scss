@@ -7,12 +7,23 @@
 $brand-dark:             #373839; //
 $brand-dark-secondary:   #4A4A4A;
 $brand-white:            #fff;
+$brand-light-gray:       #D8D8D8;
 $brand-dark-teal:        #009688;
 
 $brand-green:            #00C853;
 $brand-teal:             #00BFA5;
 $brand-light-blue:       #00B8D4;
 $brand-blue:             #0091EA;
+$brand-dark-green:       #10B454;
+
+$brand-primary:          #4A4A4A;
+// Links
+//
+// Style anchor elements.
+
+$link-color:                 $brand-primary;
+$link-hover-color:           darken($link-color, 15%);
+$link-hover-decoration:      underline;
 
 $navbar-default-link-color: $brand-dark-secondary;
 $navbar-default-brand-color: $brand-dark-secondary;
