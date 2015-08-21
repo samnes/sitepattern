@@ -23,16 +23,18 @@ $(function() {
       position = $(el).index();
 
       var element = $(el);
-      element.find(".img-deletable").addClass("hidden");
-      element.find(".code").removeClass("hidden");
-      element.addClass("container");
+      element.addClass("container-pattern-width");
+      element.find(".img-deletable").prop('hidden', 'hidden');
+      element.find(".code").removeProp('hidden');
 
-    }).on('cancel', function (el) {
-
+    }).on('cancel', function (el, source) {
       var element = $(el);
-      element.find(".code").addClass("hidden");
-      element.find(".img-deletable").removeClass("hidden");
-      element.removeClass("container");
+      
+      if(sidedragcontainerId === source.id){
+        element.find(".code").prop('hidden', 'hidden');
+        element.find(".img-deletable").removeProp('hidden');
+      }
+        element.removeClass("container-pattern-width");
 
     }).on('drop', function (el,container, source) {
 
@@ -40,9 +42,9 @@ $(function() {
          var clonedMovedElem = el.cloneNode(true);
          clonedMovedElem = $(clonedMovedElem);
 
-         clonedMovedElem.find(".code").addClass("hidden");
-         clonedMovedElem.find(".img-deletable").removeClass("hidden");
-         clonedMovedElem.removeClass("container");
+         clonedMovedElem.find(".code").prop('hidden', 'hidden');
+         clonedMovedElem.find(".img-deletable").removeProp('hidden');
+         clonedMovedElem.removeClass("container-pattern-width");
          clonedMovedElem.removeClass("gu-transit");
 
          if(position === 0){
@@ -52,7 +54,8 @@ $(function() {
          }
      }
 
-     $(el).removeClass("container");
+     $(el).removeClass("container-pattern-width");
+     $(el).find(".code").removeProp('hidden');
 
     /*Modify the pattern container dragged from sidebar to match others*/
     if(container != source){
@@ -61,7 +64,7 @@ $(function() {
       element.find(".img-deletable").remove();
 
       element.find(".sidebar-thumbnail-title").children().removeClass("col-md-12").addClass("col-md-6");
-      element.find(".sidebar-thumbnail-title").append('<div class="col-md-6"><div class="button-group btn-group pull-right"><a class="delete btn btn-default" href="#"><i class="fa fa-trash"> Remove</i></a><a class="btn btn-default" href="#"><i class="fa fa-arrows"></i></a></div></div>');
+      element.find(".sidebar-thumbnail-title").append('<div class="col-md-6"><div class="button-group btn-group pull-right"><a class="delete btn btn-default" href="#"><i class="fa fa-trash"> Remove</i></a></div></div>');
     }
 
     /*Remove the container which is shown when every pattern is deleted*/
@@ -74,12 +77,12 @@ $(function() {
   /*Enable deleting patterns*/
   $(document).on("click","a.delete", function() {
       event.preventDefault();
-      $(this).parents('.panel-container').fadeOut(300, function() {
+      $(this).parents('.card-container').fadeOut(300, function() {
         $(this).remove();
 
         /*Add new container to drag to when there are no patterns in layout*/
         if($("#dragcontainer").children().length === 0){
-          $("#dragcontainer").html('<div id="info-container" class="well"><h4 class="info-text">Drag and drop new patterns around me from left sidebar.</h4></div>');
+          $("#dragcontainer").html('<div id="info-container" class="card"><h4 class="info-text">Drag and drop new patterns around me from left sidebar.</h4></div>');
         }
     });
 
@@ -100,7 +103,7 @@ $(function() {
               marginBottom: "20px"
           }, 150);
 
-          $(this).find('.container-fluid').stop().fadeIn(400).removeClass("hidden");
+          $(this).find('.container-fluid').stop().fadeIn(400).removeProp('hidden');
       },
       mouseleave: function () {
           //stuff to do on mouse leave
@@ -110,7 +113,7 @@ $(function() {
 
           $(this).find('.container-fluid').stop().fadeOut(150);
       }
-  }, "#code .panel-container");
+  }, "#code .card-container");
 
 
   /*Post the layout to server*/

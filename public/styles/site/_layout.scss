@@ -53,19 +53,17 @@ h3, .h3 {
 //== Containers
 //
 
-// .container-sidebars {
-//   @include container-fixed;
-//
-//   @media (min-width: $screen-sm-min) {
-//     width: $container-sm;
-//   }
-//   @media (min-width: $screen-md-min) {
-//     width: $container-md;
-//   }
-//   @media (min-width: $screen-lg-min) {
-//     width: $container-lg;
-//   }
-// }
+.container-pattern-width {
+  @media (min-width: $screen-sm-min) {
+    width: $container-sm;
+  }
+  @media (min-width: $screen-md-min) {
+    width: $container-md;
+  }
+  @media (min-width: $screen-lg-min) {
+    width: $container-lg;
+  }
+}
 
 .container-top{
 	padding-top: 18px;
@@ -365,6 +363,10 @@ h3, .h3 {
 }
 
 
+//
+.pattern-width{
+	width: 1140px;
+}
 
 //== Dragula
 //

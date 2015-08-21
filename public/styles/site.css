@@ -4740,6 +4740,18 @@ h2, .h2,
 h3, .h3 {
   font-family: "Bitter", Georgia, "Times New Roman", Times, serif; }
 
+@media (min-width: 1250px) {
+  .container-pattern-width {
+    width: 750px; } }
+
+@media (min-width: 1474px) {
+  .container-pattern-width {
+    width: 970px; } }
+
+@media (min-width: 1682px) {
+  .container-pattern-width {
+    width: 1170px; } }
+
 .container-top {
   padding-top: 18px; }
 
@@ -4965,6 +4977,9 @@ h3, .h3 {
 
 #code .arrows-container {
   opacity: 0.1; }
+
+.pattern-width {
+  width: 1140px; }
 
 .gu-mirror {
   position: fixed !important;
