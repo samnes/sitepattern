@@ -5842,6 +5842,9 @@ h3, .h3 {
     .container-sidebars {
       width: 1170px; } }
 
+.container-top {
+  padding-top: 18px; }
+
 .front-page .hero-panels h2, .hero-panels h3 {
   margin-top: 0; }
 
