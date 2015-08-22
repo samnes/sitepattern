@@ -32,7 +32,7 @@ body{
 //== Navbar
 //
 
-.navbar{
+.navbar-custom {
 	margin-bottom: 0px;
 	border-bottom: 1px $brand-light-gray solid;
 }
@@ -46,12 +46,11 @@ h1, .h1,
 h2, .h2,
 h3, .h3 {
 	font-family: $font-family-serif;
-
-  // margin-top: $line-height-computed;
-  // margin-bottom: $line-height-computed;
 }
 
-
+.pattern h1, .pattern h2, .pattern h3, .pattern h4, .pattern h5,.pattern h6, .pattern{
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
 
 
 //== Containers
@@ -86,15 +85,32 @@ h3, .h3 {
 	margin-top: 0;
 }
 
-.front-page.container .jumbotron{
+.front-page.container .jumbotron-custom{
 	border-radius: 0;
 	background-color: $brand-dark-secondary;
 	padding-top: 30px;
 	padding-bottom: 0px;
 	margin-bottom: 0px;
 }
-.front-page.container .jumbotron h1{
+.front-page.container .jumbotron-custom  h1{
 		color: $brand-white;
+}
+
+
+//== Jumbotron
+//
+
+.jumbotron-custom {
+	text-align: center;
+
+@media screen and (min-width: $screen-sm-min) {
+
+		h1,
+		.h1 {
+			font-size: ($font-size-base * 2.6);
+		}
+	}
+
 }
 
 // Cards
@@ -200,13 +216,6 @@ h3, .h3 {
 //== Pattern cards
 //
 
-#code .card{
-	background-color: transparent;
-	border-radius: 0;
-	border: 4px $btn-dark-border solid;
-}
-
-
 .card-container {
 	position: relative;
 	cursor:move;
@@ -265,21 +274,7 @@ h3, .h3 {
 	color: $brand-white;
 }
 
-//== Jumbotron
-//
 
-.jumbotron {
-	text-align: center;
-
-@media screen and (min-width: $screen-sm-min) {
-
-		h1,
-		.h1 {
-			font-size: ($font-size-base * 2.6);
-		}
-	}
-
-}
 
 //== Left sidebar
 //

@@ -16,12 +16,13 @@ $brand-light-blue:       #00B8D4;
 $brand-blue:             #0091EA;
 $brand-dark-green:       #10B454;
 
-$brand-primary:          #4A4A4A;
+
+
 // Links
 //
 // Style anchor elements.
 
-$link-color:                 $brand-primary;
+$link-color:                 $brand-dark-secondary;
 $link-hover-color:           darken($link-color, 15%);
 $link-hover-decoration:      underline;
 
