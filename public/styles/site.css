@@ -296,11 +296,11 @@ blockquote {
   margin: 0 0 1rem; }
 
 a {
-  color: #4A4A4A;
+  color: #0275d8;
   text-decoration: none; }
   a:focus,
   a:hover {
-    color: #242424;
+    color: #014c8c;
     text-decoration: underline; }
   a:focus {
     outline: thin dotted;
@@ -2063,7 +2063,7 @@ fieldset[disabled] a.btn {
 
 .btn-link {
   font-weight: normal;
-  color: #4A4A4A;
+  color: #0275d8;
   border-radius: 0; }
   .btn-link,
   .btn-link:active,
@@ -2079,7 +2079,7 @@ fieldset[disabled] a.btn {
     border-color: transparent; }
   .btn-link:focus,
   .btn-link:hover {
-    color: #242424;
+    color: #014c8c;
     text-decoration: underline;
     background-color: transparent; }
   .btn-link:disabled:focus,
@@ -3092,7 +3092,7 @@ input[type="button"].btn-block {
       padding: 0.5rem 0.75rem;
       margin-left: -1px;
       line-height: 1.5;
-      color: #4A4A4A;
+      color: #0275d8;
       text-decoration: none;
       background-color: #fff;
       border: 1px solid #ddd; }
@@ -3109,7 +3109,7 @@ input[type="button"].btn-block {
   .pagination > li > a:hover,
   .pagination > li > span:focus,
   .pagination > li > span:hover {
-    color: #242424;
+    color: #014c8c;
     background-color: #eceeef;
     border-color: #ddd; }
   .pagination > .active > a,
@@ -4894,6 +4894,12 @@ h3, .h3 {
   padding-left: 25px;
   padding-right: 25px; }
 
+.btn-rounded:hover {
+  color: #fff;
+  background-color: #00b09f;
+  box-shadow: 0px 6px 10px 2px rgba(100, 100, 100, 0.3);
+  transition: all 0.2s linear; }
+
 .button-group {
   padding: 3px; }
 
@@ -4957,6 +4963,9 @@ h3, .h3 {
 
 .sidebar-body .card-title {
   margin-bottom: 0; }
+
+.sidebar-body .card-title a {
+  color: #4A4A4A; }
 
 .card-collapse {
   background-color: #fff; }

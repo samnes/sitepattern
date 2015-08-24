@@ -48,6 +48,7 @@ h3, .h3 {
 	font-family: $font-family-serif;
 }
 
+
 .pattern h1, .pattern h2, .pattern h3, .pattern h4, .pattern h5,.pattern h6, .pattern{
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
@@ -257,6 +258,14 @@ h3, .h3 {
 	padding-right: 25px;
 }
 
+.btn-rounded:hover{
+	color: $brand-white;
+	background-color: $brand-dark-teal-hover;
+	box-shadow: 0px 6px 10px 2px rgba(100,100,100,0.3);
+	transition: all 0.2s linear;
+}
+
+
 .button-group{
 	padding: 3px;
 }
@@ -335,6 +344,11 @@ h3, .h3 {
 .sidebar-body .card-title{
 	margin-bottom: 0;
 }
+
+.sidebar-body .card-title a{
+	color: $brand-dark-secondary;
+}
+
 
 .card-collapse{
 	background-color: $brand-white;

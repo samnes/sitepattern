@@ -29,7 +29,7 @@ $(function() {
 
     }).on('cancel', function (el, source) {
       var element = $(el);
-      
+
       if(sidedragcontainerId === source.id){
         element.find(".code").prop('hidden', 'hidden');
         element.find(".img-deletable").removeProp('hidden');
@@ -82,7 +82,7 @@ $(function() {
 
         /*Add new container to drag to when there are no patterns in layout*/
         if($("#dragcontainer").children().length === 0){
-          $("#dragcontainer").html('<div id="info-container" class="card"><h4 class="info-text">Drag and drop new patterns around me from left sidebar.</h4></div>');
+          $("#dragcontainer").html('<div id="info-container" class="card"><div class="card-block"><h4 class="info-text">Drag and drop new patterns around me from left sidebar.</h4></div></div>');
         }
     });
 
