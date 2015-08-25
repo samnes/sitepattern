@@ -49,7 +49,9 @@ h3, .h3 {
 }
 
 
-.pattern h1, .pattern h2, .pattern h3, .pattern h4, .pattern h5,.pattern h6, .pattern{
+.pattern h1, .pattern h2, .pattern h3, .pattern h4, .pattern h5,.pattern h6, .pattern,
+.code h1, .code h2, .code h3, .code h4, .code h5,.code h6, .code
+{
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
@@ -193,24 +195,24 @@ h3, .h3 {
 	background-image: url('/images/site_downloads.jpg');
 }
 
-.card-text{
+.card-feature .card-text{
 	max-width: 180px;
 	margin: auto;
 }
 
-.card-site-text{
+.card-feature .card-site-text{
 	margin-top: 255px;
 }
 
-.card-layout-text{
+.card-feature .card-layout-text{
 	margin-top: 20px;
 }
 
-.card-pattern-text{
+.card-feature .card-pattern-text{
 	margin-top: 255px;
 }
 
-.card-download-text{
+.card-feature .card-download-text{
 	margin-top: 255px;
 }
 
