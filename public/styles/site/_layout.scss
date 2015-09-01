@@ -227,6 +227,7 @@ h3, .h3 {
 #code .card-container .col-md-6{
 	background-color: $btn-dark-border;
 	opacity: 0.97;
+	min-height: 56px;
 	padding: 6px 12px;
 }
 #code .card-container .col-md-6 a{
@@ -234,7 +235,8 @@ h3, .h3 {
 	text-decoration: underline;
 }
 
-#code .card-container .col-md-6 a h4{
+#code .card-container .col-md-6 h4{
+	color: $btn-primary-color;
 	margin-top: 0.6rem;
 }
 
@@ -250,6 +252,12 @@ h3, .h3 {
 #code .card-container:hover .arrows-container{
 	opacity: 1;
 }
+
+.pattern-container{
+	outline: rgb(55, 56, 57) solid 4px;
+	cursor:default;
+}
+
 
 //== Buttons
 //

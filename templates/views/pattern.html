@@ -5,15 +5,13 @@
 	 <div class="sidebar-left">
 			<div class="col-md-12">
 
-
-
 			</div>
 	</div>
 
 
 <div class="main">
 
-	<div class="container-sidebars">
+	<div class="container container-sidebars">
 		<h1> {{ data.patterns.title }} pattern</h1>
 	</div>
 
@@ -21,14 +19,14 @@
 
 
 {% block content %}
-  <div class="container-sidebars">
+  <div class="container container-sidebars">
     {% if data.patterns %}
 
       <div id="code" class="row hero-panels">
 
 		        <div class="col-md-12">
-		          <div class="panel panel-default">
-		            <div class="panel-body">
+		          <div class="card-container pattern-container">
+		            <div class="">
 
 
 <div class="pattern">
@@ -36,22 +34,26 @@
       {{ data.patterns.code }}
     {% endif %}
 </div>
-									<div class="row">
 
-										<div class="col-md-6">
-											<h4>{{ data.patterns.title }}</h4>
-										</div>
+									<div class="container-fluid">
 
-										<div class="col-md-6">
-											<div class="button-group pull-right">
-												<form id="layout-form" action="/download" method="POST">
-													<input id="layout-download" class="btn btn-rounded btn-dark btn-md" type="submit" value="Download pattern">
-												</form>
+										<div class="row">
+
+											<div class="col-md-6">
+												<h4>{{ data.patterns.title }}</h4>
 											</div>
+
+											<div class="col-md-6">
+												<div class="button-group pull-right">
+													<form id="layout-form" action="/download" method="POST">
+														<input id="layout-download" class="btn btn-rounded btn-dark btn-md" type="submit" value="Download pattern">
+													</form>
+												</div>
+											</div>
+
 										</div>
 
 									</div>
-
 
 		            </div>
 		          </div>
@@ -71,22 +73,22 @@
 <div class="sidebar-right">
 		<div class="sidebar-body col-md-12">
 
-			<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+			<div class="accordion" id="accordion" role="tablist" aria-multiselectable="true">
 
 				{% if data.patterns.description %}
 
-					<div class="panel panel-default">
+					<div class="card">
 
-							<div class="panel-heading" role="tab" id="headingOne">
-					      <h4 class="panel-title">
+							<div class="card-header" role="tab" id="headingOne">
+					      <h4 class="card-title">
 					        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
 					          Description
 					        </a>
 					      </h4>
 					    </div>
 
-							<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-							      <div class="panel-body">
+							<div id="collapseOne" class="card-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+							      <div class="card-block">
 											{{ data.patterns.description }}
 										</div>
 							</div>
@@ -98,18 +100,18 @@
 
 					{% if data.patterns.context %}
 
-						<div class="panel panel-default">
+						<div class="card">
 
-								<div class="panel-heading" role="tab" id="headingTwo">
-									<h4 class="panel-title">
+								<div class="card-header" role="tab" id="headingTwo">
+									<h4 class="card-title">
 										<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
 											Context of use
 										</a>
 									</h4>
 								</div>
 
-								<div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
-											<div class="panel-body">
+								<div id="collapseTwo" class="card-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
+											<div class="card-block">
 												{{ data.patterns.context }}
 											</div>
 								</div>
@@ -121,18 +123,18 @@
 
 						{% if data.patterns.examples %}
 
-							<div class="panel panel-default">
+							<div class="card">
 
-									<div class="panel-heading" role="tab" id="headingTwo">
-										<h4 class="panel-title">
+									<div class="card-header" role="tab" id="headingTwo">
+										<h4 class="card-title">
 											<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
 												Examples of use
 											</a>
 										</h4>
 									</div>
 
-									<div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
-												<div class="panel-body">
+									<div id="collapseThree" class="card-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
+												<div class="card-block">
 													{{ data.patterns.examples }}
 												</div>
 									</div>
