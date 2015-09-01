@@ -75,7 +75,6 @@
 
 			<div class="accordion" id="accordion" role="tablist" aria-multiselectable="true">
 
-				{% if data.patterns.description %}
 
 					<div class="card">
 
@@ -89,16 +88,15 @@
 
 							<div id="collapseOne" class="card-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
 							      <div class="card-block">
-											{{ data.patterns.description }}
+											{% if data.patterns.description %}
+													{{ data.patterns.description }}
+											{% else %}
+												<p class="card-text">No description added yet.</p>
+											{% endif %}
 										</div>
 							</div>
 
 					</div>
-
-					{% endif %}
-
-
-					{% if data.patterns.context %}
 
 						<div class="card">
 
@@ -112,13 +110,16 @@
 
 								<div id="collapseTwo" class="card-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
 											<div class="card-block">
-												{{ data.patterns.context }}
+												{% if data.patterns.context %}
+													{{ data.patterns.context }}
+												{% else %}
+														<p class="card-text">No context of use added yet.</p>
+												{% endif %}
 											</div>
 								</div>
 
 						</div>
 
-						{% endif %}
 
 
 						{% if data.patterns.examples %}
