@@ -9,7 +9,7 @@
 {% block content %}
   <div class="container">
     {% if data.sites.length %}
-      <div class="row hero-panels">
+      <div class="row hero-panels m-b-md">
 
       {% for site in data.sites %}
 
@@ -31,7 +31,7 @@
         </div>
 
         {% if loop.index % 3 == 0 %}
-          </div><div class="row hero-panels">
+          </div><div class="row hero-panels m-b-md">
         {% elif loop.last %}
           </div>
         {% endif %}
