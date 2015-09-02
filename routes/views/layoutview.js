@@ -1,4 +1,4 @@
-var keystone = require('keystone');
+var keystone = require('keystone'),
 
 exports = module.exports = function(req, res) {
 
@@ -51,7 +51,9 @@ exports = module.exports = function(req, res) {
 	// Load all the patterns
 	view.on('init', function(next) {
 
-		var q = keystone.list('Layout').model.find().where('state', 'published').populate('sites patterns');
+		var q = keystone.list('Layout').model.find();
+
+		q.where('state', 'published').populate('sites patterns').deepPopulate('patterns.patternCategories');
 
 		if (locals.filters.site) {
 			q.where('sites').in([locals.filters.site]);
@@ -60,7 +62,6 @@ exports = module.exports = function(req, res) {
 		q.exec(function(err, result) {
 			locals.data.patterns = result;
 			next(err);
-
 		});
 
 	});

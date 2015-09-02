@@ -1,5 +1,8 @@
 var keystone = require('keystone');
 var Types = keystone.Field.Types;
+var mongoose = (keystone.mongoose);
+var deepPopulate = require('mongoose-deep-populate')(mongoose);
+
 
 /**
  * Layout Model
@@ -24,5 +27,6 @@ var Types = keystone.Field.Types;
   examples: { type: Types.Html, wysiwyg: true, height: 50, label: 'Links to example sites', note: 'Add bullet list of urls' }
  });
 
+Layout.schema.plugin(deepPopulate);
 
 Layout.register();
