@@ -9,12 +9,15 @@ exports = module.exports = function(req, res) {
 	locals.section = 'site';
 	locals.filters = {
 		view: req.params.layoutview,
+		site: req.params.layout,
+		siteName: req.params.layout,
 		originalUrl: req.originalUrl
 	};
   locals.data = {
     views: [],
 		patterns: []
   };
+
 
 	// Load the current layout
 	view.on('init', function(next) {
@@ -31,10 +34,28 @@ exports = module.exports = function(req, res) {
 
 	});
 
+	// Load the current site filter
+	view.on('init', function(next) {
+
+		if (locals.filters.site) {
+			keystone.list('Site').model.findOne({ key: locals.filters.site }).exec(function(err, result) {
+				locals.filters.site = result;
+				next(err);
+			});
+		} else {
+			next();
+		}
+
+	});
+
 	// Load all the patterns
 	view.on('init', function(next) {
 
-	  var q = keystone.list('Pattern').model.find().where('state', 'published').sort('-publishedDate');
+		var q = keystone.list('Layout').model.find().where('state', 'published').populate('sites patterns');
+
+		if (locals.filters.site) {
+			q.where('sites').in([locals.filters.site]);
+		}
 
 		q.exec(function(err, result) {
 			locals.data.patterns = result;

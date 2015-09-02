@@ -9,40 +9,40 @@
 
 						<div class="card-header" role="tab" id="headingPatterns">
 							<h4 class="card-title">
-								<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-									Blog patterns
+								<a role="button" data-toggle="collapse" data-parent="#accordion" href="#left-collapseOne" aria-expanded="true" aria-controls="left-collapseOne">
+									{{filters.siteName}} patterns
 								</a>
 							</h4>
 						</div>
 
-						<div id="collapseOne" class="card-collapse collapse in" role="tabpanel" aria-labelledby="headingPatterns">
+						<div id="left-collapseOne" class="card-collapse collapse in" role="tabpanel" aria-labelledby="headingPatterns">
 									<div id="sidedragcontainer" class="card-block">
 
 										{% if data.patterns.length %}
-											{% for pattern in data.patterns %}
+											{% for layout in data.patterns %}
+												{% for pattern in layout.patterns %}
+													<div class="card-container sidebar-thumbnail card-container-link">
+														{% if pattern.image.exists %}
+															<img src="{{ pattern._.image.thumbnail(195,130) }}" class="img img-deletable">
+														{% endif %}
 
-											<div class="card-container sidebar-thumbnail card-container-link">
-												{% if pattern.image.exists %}
-													<img src="{{ pattern._.image.thumbnail(195,130) }}" class="img img-deletable">
-												{% endif %}
+														<div class="arrows-container">
+															<i class="fa fa-arrows"></i>
+														</div>
 
-												<div class="arrows-container">
-													<i class="fa fa-arrows"></i>
-												</div>
+														<div class="code" hidden>
+														{{ pattern.code }}
+														</div>
 
-												<div class="code" hidden>
-												{{ pattern.code }}
-												</div>
-
-												<div class="container-fluid">
-													<div class="sidebar-thumbnail-title row">
-															<div class="col-md-12">
-																<a href="{{ filters.originalUrl }}/pattern/{{ pattern.key }}"><h4>{{ pattern.title }}</h4></a>
+														<div class="container-fluid">
+															<div class="sidebar-thumbnail-title row">
+																	<div class="col-md-12">
+																		<a href="{{ filters.originalUrl }}/pattern/{{ pattern.key }}"><h4>{{ pattern.title }}</h4></a>
+																	</div>
 															</div>
+														</div>
 													</div>
-												</div>
-											</div>
-
+													{% endfor %}
 												{% endfor %}
 										{% endif %}
 								</div>
@@ -136,15 +136,15 @@
 
 					<div class="card">
 
-							<div class="card-header" role="tab" id="headingOne">
+							<div class="card-header" role="tab" id="right-headingOne">
 					      <h4 class="card-title">
-					        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+					        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#right-collapseOne" aria-expanded="true" aria-controls="right-collapseOne">
 					          Description
 					        </a>
 					      </h4>
 					    </div>
 
-							<div id="collapseOne" class="card-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+							<div id="right-collapseOne" class="card-collapse collapse in" role="tabpanel" aria-labelledby="right-headingOne">
 					      <div class="card-block">
 									{{ data.views.description }}
 									{% if data.views.description %}
@@ -162,13 +162,13 @@
 
 								<div class="card-header" role="tab" id="headingTwo">
 									<h4 class="card-title">
-										<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+										<a role="button" data-toggle="collapse" data-parent="#accordion" href="#right-collapseTwo" aria-expanded="true" aria-controls="right-collapseTwo">
 											Context of use
 										</a>
 									</h4>
 								</div>
 
-								<div id="collapseTwo" class="card-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
+								<div id="right-collapseTwo" class="card-collapse collapse in" role="tabpanel" aria-labelledby="right-headingTwo">
 											<div class="card-block">
 												{% if data.views.context %}
 													{{ data.views.context }}
@@ -186,15 +186,15 @@
 
 							<div class="card">
 
-									<div class="card-header" role="tab" id="headingTwo">
+									<div class="card-header" role="tab" id="right-headingTwo">
 										<h4 class="card-title">
-											<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+											<a role="button" data-toggle="collapse" data-parent="#accordion" href="#right-collapseThree" aria-expanded="true" aria-controls="right-collapseThree">
 												Examples of use
 											</a>
 										</h4>
 									</div>
 
-									<div id="collapseThree" class="card-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
+									<div id="right-collapseThree" class="card-collapse collapse in" role="tabpanel" aria-labelledby="right-headingThree">
 												<div class="card-block">
 													{{ data.views.examples }}
 												</div>
