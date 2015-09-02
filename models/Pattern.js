@@ -13,6 +13,7 @@ var Types = keystone.Field.Types;
 
  Pattern.add({
  	title: { type: String, required: true },
+  patternCategories: { type: Types.Relationship, ref: 'PatternCategory', many: true, label: 'Pattern Category'},
  	state: { type: Types.Select, options: 'draft, published, archived', default: 'draft', index: true },
  	author: { type: Types.Relationship, ref: 'User', index: true},
  	publishedDate: { type: Types.Date, index: true, dependsOn: { state: 'published' } },
