@@ -19,6 +19,7 @@
 									<div id="sidedragcontainer" class="card-block">
 
 										{% if data.patterns.length %}
+										{{data.patterns}}
 											{% for layout in data.patterns %}
 												{% for pattern in layout.patterns %}
 													<div class="card-container sidebar-thumbnail card-container-link">
@@ -31,14 +32,18 @@
 														</div>
 
 														<div class="code" hidden>
-														{{ pattern.code }}
+															{% if pattern.code  %}
+																{{ pattern.code }}
+															{% endif %}
 														</div>
 
 														<div class="container-fluid">
 															<div class="sidebar-thumbnail-title row">
 																	<div class="col-md-12">
-																		<a href="{{ filters.originalUrl }}/pattern/{{ pattern.key }}"><h4>{{ pattern.title }}</h4></a>
-																		{{ pattern.patternCategories }}
+																		<a href="{{ filters.originalUrl }}/pattern/{{ pattern.key }}"><h4>{% if pattern.title %} {{ pattern.title }} {% endif %}</h4></a>
+																		{% if pattern.patternCategories  %}
+																			{{ pattern.patternCategories }}
+																		{% endif %}
 																	</div>
 															</div>
 														</div>
