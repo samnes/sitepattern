@@ -51,32 +51,6 @@ exports = module.exports = function(req, res) {
 	// Load all the patterns
 	view.on('init', function(next) {
 
-
-		/*var q = keystone.list('Layout').model.find();*/
-
-		/*var options = {
-		  patternCategories: {
-		    options: {
-		      sort: '-name'
-		    }
-		  }
-		}*/
-
-		/*q.where('state', 'published').populate('sites patterns').deepPopulate('patterns.patternCategories');*/
-
-		/*if (locals.filters.site) {
-			console.log(locals.filters.site);
-			q.where('sites').in([locals.filters.site]);
-		}*/
-
-		/*q.where('key', 'front-page-big-images');*/
-
-		/*var site = locals.filters.siteName;
-		var query = {};
-		query['sites.key.' + site] = {$exists: true};
-		console.log(query);
-		q.find(query);*/
-
 		var q = keystone.list('Pattern').model.find();
 
 		// Get the _ids of the users of the selected category
