@@ -1,4 +1,5 @@
 var keystone = require('keystone'),
+async = require('async');
 
 exports = module.exports = function(req, res) {
 
@@ -49,31 +50,82 @@ exports = module.exports = function(req, res) {
 	});
 
 	// Load all the patterns
+
 	view.on('init', function(next) {
 
+		var categoryNames = [];
 		var q = keystone.list('Pattern').model.find();
 
-		// Get the _ids of the users of the selected category
-		keystone.list('PatternCategory').model.find({name:'Navigation'}, {_id: 1}, function(err, categories) {
+		async.series([
+			function(callback) {
+				//Get category names
+				var category = keystone.list('PatternCategory').model.find({}, function(err, categories) {
+			    if (!err){
+							categoryNames = categories.map(function(category) { return category.name; });
+			        console.log(categoryNames);
 
-		    // Map the user docs into an array of just the _ids
-		    var ids = categories.map(function(category) { return category._id; });
-				/*console.log(ids);*/
+							// Category object test
+							var categories = {};
+							for (var i = 0; i < categoryNames.length; i++) {
+									var key = categoryNames[i];
+									categories[key] = {
+											name: 'example',
+											key: 'example'
+									};
+							}
+							console.log(categories);
 
-		    // Get the patterns whose patternCategories is in that set of ids
-		    keystone.list('Pattern').model.find({patternCategories: {$in: ids}}).exec(function(err, patterns) {
-						var ids = patterns.map(function(pattern) { return pattern._id; });
-					  q.find({'_id': {$in: ids}});
+
+							callback();
+
+			    } else {throw err;}
+				});
+
+		},function(done) {
+				// Get the _ids of the users of the selected category
+				console.log(categoryNames);
+
+				async.each(categoryNames, function(category, callback) {
+
+					console.log(category);
+
+						keystone.list('PatternCategory').model.find({name: category}, {_id: 1}, function(err, categories) {
+
+						    // Map the pattern categories into an array of just the _ids
+						    var ids = categories.map(function(category) { return category._id; });
+
+						    // Get the patterns whose patternCategories is in that set of ids
+						    q.find({patternCategories: {$in: ids}}).exec(function(err, patterns) {
+										var ids = patterns.map(function(pattern) { return pattern._id; });
+										console.log(ids);
+									  q.find({'_id': {$in: ids}});
+
+										callback();
+
+						    });
+
+						});
+
+				}, function(err){
+					if(err) {
+				 		console.log('A category failed to process');
+					} else {
+						console.log('Categories processed successfully');
+						done();
+					}
+				});
+
+					}
+				], function(err) { //This function gets called after the two tasks have called their "task callbacks"
+		        if (err) return next(err);
+		        //Here locals will be populated
 
 						q.exec(function(err, result) {
 							locals.data.patterns = result;
 							next(err);
 						});
 
-		    });
-
-		});
-
+		    });//end async.series
 
 	});
 
