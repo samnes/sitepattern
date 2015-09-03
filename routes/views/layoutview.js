@@ -53,8 +53,9 @@ exports = module.exports = function(req, res) {
 
 	view.on('init', function(next) {
 
+		var categoriesRes = [];
 		var categoryNames = [];
-		var q = keystone.list('Pattern').model.find();
+		var query = {};
 
 		async.series([
 			function(callback) {
@@ -63,18 +64,6 @@ exports = module.exports = function(req, res) {
 			    if (!err){
 							categoryNames = categories.map(function(category) { return category.name; });
 			        console.log(categoryNames);
-
-							// Category object test
-							var categories = {};
-							for (var i = 0; i < categoryNames.length; i++) {
-									var key = categoryNames[i];
-									categories[key] = {
-											name: 'example',
-											key: 'example'
-									};
-							}
-							console.log(categories);
-
 
 							callback();
 
@@ -87,6 +76,8 @@ exports = module.exports = function(req, res) {
 
 				async.each(categoryNames, function(category, callback) {
 
+					var q = keystone.list('Pattern').model.find();
+
 					console.log(category);
 
 						keystone.list('PatternCategory').model.find({name: category}, {_id: 1}, function(err, categories) {
@@ -97,10 +88,15 @@ exports = module.exports = function(req, res) {
 						    // Get the patterns whose patternCategories is in that set of ids
 						    q.find({patternCategories: {$in: ids}}).exec(function(err, patterns) {
 										var ids = patterns.map(function(pattern) { return pattern._id; });
-										console.log(ids);
-									  q.find({'_id': {$in: ids}});
+										/*console.log(ids);*/
+									  q.find({'_id': {$in: ids}}).exec(function(err, patterns) {
 
-										callback();
+											for (var i=0; i < patterns.length; i++) {
+												categoriesRes.push( patterns[i] );
+											}
+											query = q;
+											callback(null);
+										});
 
 						    });
 
@@ -119,9 +115,10 @@ exports = module.exports = function(req, res) {
 				], function(err) { //This function gets called after the two tasks have called their "task callbacks"
 		        if (err) return next(err);
 		        //Here locals will be populated
+						console.log(categoriesRes);
 
-						q.exec(function(err, result) {
-							locals.data.patterns = result;
+						query.exec(function(err, result) {
+							locals.data.patterns = categoriesRes;
 							next(err);
 						});
 
