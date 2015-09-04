@@ -1,5 +1,5 @@
+'use strict';
 var keystone = require('keystone');
-var util = require('util');
 
 exports = module.exports = function(req, res){
 

@@ -1,3 +1,4 @@
+'use strict';
 /**
  * This file is where you define your application routes and controllers.
  *

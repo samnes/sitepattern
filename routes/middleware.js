@@ -1,3 +1,4 @@
+'use strict';
 /**
  * This file contains the common middleware used by your routes.
  *

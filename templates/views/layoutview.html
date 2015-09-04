@@ -20,8 +20,7 @@
 
 										{% if data.patterns.length %}
 										{{data.patterns}}
-											{% for layout in data.patterns %}
-												{% for pattern in layout.patterns %}
+											{% for pattern in data.patterns %}
 													<div class="card-container sidebar-thumbnail card-container-link">
 														{% if pattern.image.exists %}
 															<img src="{{ pattern._.image.thumbnail(195,130) }}" class="img img-deletable">
@@ -42,14 +41,13 @@
 																	<div class="col-md-12">
 																		<a href="{{ filters.originalUrl }}/pattern/{{ pattern.key }}"><h4>{% if pattern.title %} {{ pattern.title }} {% endif %}</h4></a>
 																		{% if pattern.patternCategories  %}
-																			{{ pattern.patternCategories }}
+																			<!-- {{ pattern.patternCategories }} -->
 																		{% endif %}
 																	</div>
 															</div>
 														</div>
 													</div>
 													{% endfor %}
-												{% endfor %}
 										{% endif %}
 								</div>
 						</div>

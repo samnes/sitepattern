@@ -1,3 +1,4 @@
+'use strict';
 var keystone = require('keystone'),
 async = require('async');
 
@@ -49,7 +50,7 @@ exports = module.exports = function(req, res) {
 
 	});
 
-	// Load all the patterns
+	// Load the patterns
 
 	view.on('init', function(next) {
 
@@ -60,7 +61,7 @@ exports = module.exports = function(req, res) {
 		async.series([
 			function(callback) {
 				//Get category names
-				var category = keystone.list('PatternCategory').model.find({}, function(err, categories) {
+				keystone.list('PatternCategory').model.find({}, function(err, categories) {
 			    if (!err){
 							categoryNames = categories.map(function(category) { return category.name; });
 			        console.log(categoryNames);
@@ -91,9 +92,17 @@ exports = module.exports = function(req, res) {
 										/*console.log(ids);*/
 									  q.find({'_id': {$in: ids}}).exec(function(err, patterns) {
 
-											for (var i=0; i < patterns.length; i++) {
-												categoriesRes.push( patterns[i] );
+											var patternCategory = {
+												category: category,
+								        patterns: []
+											};
+
+											for (var i = 0; i < patterns.length; i++) {
+												patternCategory.patterns.push(patterns[i]);
 											}
+
+											categoriesRes.push(patternCategory);
+
 											query = q;
 											callback(null);
 										});
@@ -113,11 +122,13 @@ exports = module.exports = function(req, res) {
 
 					}
 				], function(err) { //This function gets called after the two tasks have called their "task callbacks"
-		        if (err) return next(err);
+		        if (err) {
+							return next(err);
+						}
 		        //Here locals will be populated
 						console.log(categoriesRes);
 
-						query.exec(function(err, result) {
+						query.exec(function(err) {
 							locals.data.patterns = categoriesRes;
 							next(err);
 						});
