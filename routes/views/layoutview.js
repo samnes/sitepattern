@@ -1,6 +1,7 @@
 'use strict';
 var keystone = require('keystone'),
 async = require('async');
+var _ = require('underscore');
 
 exports = module.exports = function(req, res) {
 
@@ -56,6 +57,7 @@ exports = module.exports = function(req, res) {
 
 		var categoriesRes = [];
 		var categoryNames = [];
+		var patternIds = [];
 		var query = {};
 
 		async.series([
@@ -71,10 +73,28 @@ exports = module.exports = function(req, res) {
 			    } else {throw err;}
 				});
 
+		},function(callback) {
+			var layoutQuery = keystone.list('Layout').model.find();
+
+			//Get all the site ids
+			keystone.list('Site').model.findOne({ key: locals.filters.siteName }, function(err, site) {
+					var id =  site._id;
+					console.log(id);
+					//Get all the layouts in current site
+					layoutQuery.find({sites: id}, function(err, layouts) {
+						patternIds = layouts.map(function(layout) { return layout.patterns; });
+						patternIds = [].concat.apply([],patternIds);
+						patternIds = patternIds.map(function(item) {
+    						return item.toString();
+						});
+
+						console.log('This is pattern ids: ' +  patternIds);
+						callback();
+					});
+			});
+
 		},function(done) {
 				// Get the _ids of the users of the selected category
-				console.log(categoryNames);
-
 				async.each(categoryNames, function(category, callback) {
 
 					var q = keystone.list('Pattern').model.find();
@@ -89,8 +109,17 @@ exports = module.exports = function(req, res) {
 						    // Get the patterns whose patternCategories is in that set of ids
 						    q.find({patternCategories: {$in: ids}}).exec(function(err, patterns) {
 										var ids = patterns.map(function(pattern) { return pattern._id; });
-										/*console.log(ids);*/
-									  q.find({'_id': {$in: ids}}).exec(function(err, patterns) {
+										ids = ids.map(function(item) {
+				    						return item.toString();
+										});
+
+										 var strippedIds = _.intersection(ids,patternIds);
+
+										// console.log('This is ids: ' + ids);
+										// console.log(patternIds);
+										// console.log('This is stripped out: ' + strippedIds);
+
+									  q.find({'_id': {$in: strippedIds}}).exec(function(err, patterns) {
 
 											var patternCategory = {
 												category: category,
@@ -126,7 +155,7 @@ exports = module.exports = function(req, res) {
 							return next(err);
 						}
 		        //Here locals will be populated
-						console.log(categoriesRes);
+						// console.log(categoriesRes);
 
 						query.exec(function(err) {
 							locals.data.patterns = categoriesRes;

@@ -17,7 +17,7 @@ exports = module.exports = function(req, res){
   };
 
 
-  // Load the current layout filter
+  // Load the current site
   view.on('init', function(next) {
 
     if (req.params.layout) {
@@ -42,7 +42,6 @@ exports = module.exports = function(req, res){
 
       q.exec(function(err, results) {
         locals.data.selected = results;
-
         next(err);
       });
 

@@ -16,37 +16,53 @@
 						</div>
 
 						<div id="left-collapseOne" class="card-collapse collapse in" role="tabpanel" aria-labelledby="headingPatterns">
-									<div id="sidedragcontainer" class="card-block">
+									<div id="sidedragcontainer">
 
 										{% if data.patterns.length %}
-										{{data.patterns}}
-											{% for pattern in data.patterns %}
-													<div class="card-container sidebar-thumbnail card-container-link">
-														{% if pattern.image.exists %}
-															<img src="{{ pattern._.image.thumbnail(195,130) }}" class="img img-deletable">
-														{% endif %}
 
-														<div class="arrows-container">
-															<i class="fa fa-arrows"></i>
-														</div>
+											{% for item in data.patterns %}
 
-														<div class="code" hidden>
-															{% if pattern.code  %}
-																{{ pattern.code }}
-															{% endif %}
-														</div>
+												<div class="card-header" role="tab" id="left-heading-{{ item.category }}">
+													<h4 class="card-title">
+										        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#left-collapse-{{ item.category }}" aria-expanded="true" aria-controls="left-collapse-{{ item.category }}">
+										          {{ item.category }}
+										        </a>
+										      </h4>
+												</div>
 
-														<div class="container-fluid">
-															<div class="sidebar-thumbnail-title row">
-																	<div class="col-md-12">
-																		<a href="{{ filters.originalUrl }}/pattern/{{ pattern.key }}"><h4>{% if pattern.title %} {{ pattern.title }} {% endif %}</h4></a>
-																		{% if pattern.patternCategories  %}
-																			<!-- {{ pattern.patternCategories }} -->
-																		{% endif %}
+												<div id="left-collapse-{{ item.category }}" class="card-collapse collapse in card-block" role="tabpanel" aria-labelledby="left-heading-{{ item.category }}">
+
+
+													{% for pattern in item.patterns %}
+															<div class="card-container sidebar-thumbnail card-container-link">
+																{% if pattern.image.exists %}
+																	<img src="{{ pattern._.image.thumbnail(195,130) }}" class="img img-deletable">
+																{% endif %}
+
+																<div class="arrows-container">
+																	<i class="fa fa-arrows"></i>
+																</div>
+
+																<div class="code" hidden>
+																	{% if pattern.code  %}
+																		{{ pattern.code }}
+																	{% endif %}
+																</div>
+
+																<div class="container-fluid">
+																	<div class="sidebar-thumbnail-title row">
+																			<div class="col-md-12">
+																				<a href="{{ filters.originalUrl }}/pattern/{{ pattern.key }}"><h4>{% if pattern.title %} {{ pattern.title }} {% endif %}</h4></a>
+																				{% if pattern.patternCategories  %}
+																					<!-- {{ pattern.patternCategories }} -->
+																				{% endif %}
+																			</div>
 																	</div>
+																</div>
 															</div>
+														{% endfor %}
 														</div>
-													</div>
+
 													{% endfor %}
 										{% endif %}
 								</div>
