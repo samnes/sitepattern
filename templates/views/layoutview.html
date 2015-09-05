@@ -7,10 +7,10 @@
 
 				<div class="card">
 
-						<div class="card-header" role="tab" id="headingPatterns">
+						<div class="card-header card-header-first-level" role="tab" id="headingPatterns">
 							<h4 class="card-title">
 								<a role="button" data-toggle="collapse" data-parent="#accordion" href="#left-collapseOne" aria-expanded="true" aria-controls="left-collapseOne">
-									{{filters.siteName}} patterns
+									<i class="fa fa-caret-down m-r"></i> {{filters.siteName}} patterns
 								</a>
 							</h4>
 						</div>
@@ -23,10 +23,10 @@
 											{% for item in data.patterns %}
 
 												{% if item.patterns.length %}
-														<div class="card-header" role="tab" id="left-heading-{{ item.category }}">
+														<div class="card-header card-header-second-level" role="tab" id="left-heading-{{ item.category }}">
 															<h4 class="card-title">
 												        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#left-collapse-{{ item.category }}" aria-expanded="true" aria-controls="left-collapse-{{ item.category }}">
-												          {{ item.category }}
+												          <i class="fa fa-caret-down m-r"></i>{{ item.category }}
 												        </a>
 												      </h4>
 														</div>
@@ -34,6 +34,7 @@
 
 												<!-- Container for draggable elements -->
 												{% if item.patterns.length %}
+
 												<div id="left-collapse-{{ item.category }}" class="sidedraggable draggable card-collapse collapse in card-block" role="tabpanel" aria-labelledby="left-heading-{{ item.category }}">
 
 													{% for pattern in item.patterns %}

@@ -118,6 +118,16 @@ $(function() {
   }, '#code .card-container');
 
 
+     // Switch the accordion icons state
+     function toggleChevron(e) {
+      e.stopPropagation();
+      $(e.target).prev('.card-header').find('i.fa').toggleClass('fa-caret-down fa-caret-right');
+      console.log($(e.target).prev('.card-header').find('i.fa'));
+     }
+
+    $('.card-collapse').on('hidden.bs.collapse shown.bs.collapse', toggleChevron);
+
+
   /*Post the layout to server*/
   $('#layout-download').click(function(e){
     e.preventDefault();

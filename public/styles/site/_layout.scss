@@ -355,15 +355,34 @@ h3, .h3 {
 	margin-bottom: 0;
 }
 
+.card-header-first-level{
+	background-color: $brand-dark-teal;
+}
+.card-header-first-level h4.card-title a{
+	font-size: $font-size-base * 1.1;
+	color: $brand-white;
+}
+.card-header-first-level:first-child{
+	border-radius: 0;
+}
+
+.card-header-second-level{
+
+}
+
+.card-header-second-level h4.card-title a{
+	font-size: $font-size-base * 1.0;
+}
+
 .sidebar-body .card-title a{
 	color: $brand-dark-secondary;
 	text-transform:capitalize;
 }
 
-
 .card-collapse{
 	background-color: $brand-white;
 }
+
 
 // Thumbnail
 
