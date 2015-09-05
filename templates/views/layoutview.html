@@ -22,17 +22,19 @@
 
 											{% for item in data.patterns %}
 
-												<div class="card-header" role="tab" id="left-heading-{{ item.category }}">
-													<h4 class="card-title">
-										        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#left-collapse-{{ item.category }}" aria-expanded="true" aria-controls="left-collapse-{{ item.category }}">
-										          {{ item.category }}
-										        </a>
-										      </h4>
-												</div>
+												{% if item.patterns.length %}
+														<div class="card-header" role="tab" id="left-heading-{{ item.category }}">
+															<h4 class="card-title">
+												        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#left-collapse-{{ item.category }}" aria-expanded="true" aria-controls="left-collapse-{{ item.category }}">
+												          {{ item.category }}
+												        </a>
+												      </h4>
+														</div>
+													{% endif %}
 
 												<!-- Container for draggable elements -->
+												{% if item.patterns.length %}
 												<div id="left-collapse-{{ item.category }}" class="sidedraggable draggable card-collapse collapse in card-block" role="tabpanel" aria-labelledby="left-heading-{{ item.category }}">
-
 
 													{% for pattern in item.patterns %}
 															<div class="card-container sidebar-thumbnail card-container-link">
@@ -60,19 +62,18 @@
 																			</div>
 																	</div>
 																</div>
+
 															</div>
 														{% endfor %}
 
-														</div>
-
-													{% endfor %}
+													</div>
+													{% endif %}
+											{% endfor %}
 										{% endif %}
 								</div>
 						</div>
 
 			 </div>
-
-
 			</div>
 	</div>
 
@@ -130,15 +131,12 @@
 										<h3 class="text-muted">There are no patterns in this layout yet.</h3>
 									{% endif %}
 		        </div>
-
     	</div>
 
     {% else %}
       <h3 class="text-muted">There is no layout available yet.</h3>
     {% endif %}
-
   </div>
-
 </div>
 
 

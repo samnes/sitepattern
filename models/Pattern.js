@@ -1,3 +1,4 @@
+'use strict';
 var keystone = require('keystone');
 var Types = keystone.Field.Types;
 
@@ -9,7 +10,7 @@ var Types = keystone.Field.Types;
 
  var Pattern = new keystone.List('Pattern', {
   map: { name: 'title' },
-  autokey: { path: 'key', from: 'title', unique: true }
+  autokey: { path: 'key', from: 'title', unique: true },
  });
 
  Pattern.add({
@@ -25,5 +26,6 @@ var Types = keystone.Field.Types;
   examples: { type: Types.Html, wysiwyg: true, height: 50, label: 'Links to example sites', note: 'Add bullet list of urls' }
  });
 
+Pattern.defaultColumns = 'title, patternCategories';
 
 Pattern.register();
