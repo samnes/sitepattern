@@ -30,7 +30,8 @@
 										      </h4>
 												</div>
 
-												<div id="left-collapse-{{ item.category }}" class="card-collapse collapse in card-block" role="tabpanel" aria-labelledby="left-heading-{{ item.category }}">
+												<!-- Container for draggable elements -->
+												<div id="left-collapse-{{ item.category }}" class="sidedraggable draggable card-collapse collapse in card-block" role="tabpanel" aria-labelledby="left-heading-{{ item.category }}">
 
 
 													{% for pattern in item.patterns %}
@@ -61,6 +62,7 @@
 																</div>
 															</div>
 														{% endfor %}
+
 														</div>
 
 													{% endfor %}
@@ -90,7 +92,7 @@
 
       <div id="code" class="row hero-cards">
 
-		        <div id="dragcontainer" class="col-md-12">
+		        <div id="dragcontainer" class="draggable col-md-12">
 
 									{% if data.views.patterns.length %}
 
