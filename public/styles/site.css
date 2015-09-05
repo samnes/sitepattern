@@ -4763,7 +4763,8 @@ h3, .h3 {
 
 .container-sidebars {
   margin-top: 20px;
-  margin-bottom: 20px; }
+  border-bottom: 1px solid rgba(0, 150, 136, 0.14);
+  padding-bottom: 20px; }
 
 .front-page .hero-panels h2, .hero-panels h3 {
   margin-top: 0; }
