@@ -6,8 +6,8 @@
 // use in your site stylesheets.
 
 @import "site/variables";
-
 @import "bootstrap-4/bootstrap/bootstrap";
+@import "site/breakpoints";
 
 // The easiest way to customise Bootstrap variables while
 // being able to easily override the source files with new

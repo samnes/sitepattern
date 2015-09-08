@@ -59,17 +59,6 @@ h3, .h3 {
 //== Containers
 //
 
-.container-pattern-width {
-  @media (min-width: $screen-sm-min) {
-    width: $container-sm;
-  }
-  @media (min-width: $screen-md-min) {
-    width: $container-md;
-  }
-  @media (min-width: $screen-lg-min) {
-    width: $container-lg;
-  }
-}
 
 .container-top{
 	margin-top: 40px;
@@ -77,6 +66,12 @@ h3, .h3 {
 }
 
 .container-sidebars{
+
+	@each $breakpoint, $container-max-width in $container-max-widths {
+    @include media-breakpoint-up-side($breakpoint) {
+      max-width: $container-max-width;
+    }
+  }
 	margin-top: 20px;
 	border-bottom: 1px solid rgba(0, 150, 136, 0.14);
   padding-bottom: 20px;

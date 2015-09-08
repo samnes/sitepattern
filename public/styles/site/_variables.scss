@@ -58,26 +58,37 @@ $btn-dark-border:             darken($btn-dark-bg, 5%) ;
 
 //== Custom containers
 //## Needed for layouts to fit with the sidebars
+
+$side-container-max-widths: (
+  sm: 64.125rem,    // 1026 (480) 34
+  md: 75.125rem,    // 1250 (720) 45
+  lg: 90.125rem,   // 1474 (960) 60
+  xl: 105.375rem  // 1682 (1140) 72.25
+);
+
+
+// Grid breakpoints
+//
+// Define the minimum and maximum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+
+$grid-breakpoints-side: (
+  // Extra small screen / phone 0
+  xs: 0,
+  // Small screen / phone (34em)
+  sm: 64.125em,
+  // Medium screen / tablet (48em)
+  md: 78.125em,
+  // Large screen / desktop (62em)
+  lg: 92.125em,
+  // Extra large screen / wide desktop (72em)
+  xl: 105.125em
+);
+
+
+//== Old containers
+//## Needed for layouts to fit with the sidebars
 $screen-xs:                      480px;
 $screen-sm-min:                  1250px;
 $screen-md-min:                  1474px;
 $screen-lg-min:                  1682px;
-
-
-//** Padding between columns. Gets divided in half for the left and right.
-$grid-gutter-width:         30px !default;
-
-// Small screen / tablet
-$container-tablet:             (720px + $grid-gutter-width);
-//** For `$screen-sm-min` and up.
-$container-sm:                 $container-tablet ;
-
-// Medium screen / desktop
-$container-desktop:            (940px + $grid-gutter-width);
-//** For `$screen-md-min` and up.
-$container-md:                 $container-desktop;
-
-// Large screen / wide desktop
-$container-large-desktop:      (1140px + $grid-gutter-width);
-//** For `$screen-lg-min` and up.
-$container-lg:                 $container-large-desktop;
