@@ -37,7 +37,49 @@ body{
 	border-bottom: 1px $brand-light-gray solid;
 }
 
+// Override for bootstrap styles
+.draggable .navbar-toggleable {
+  &-xs {
+    @include media-breakpoint-up(sm) {
+      display: none !important;
+    }
+  }
+  &-sm {
+    @include media-breakpoint-up(md) {
+      display: none !important;
+    }
+  }
+}
 
+// Custom override to be used with sidebars
+.draggable .navbar-toggleable {
+  &-xs {
+    @include media-breakpoint-up-side(sm) {
+      display: block !important;
+    }
+  }
+  &-sm {
+    @include media-breakpoint-up-side(md) {
+      display: block !important;
+    }
+  }
+}
+
+@each $bp in map-keys($grid-breakpoints-side) {
+  .draggable .hidden-#{$bp}-up {
+    @include media-breakpoint-up($bp) {
+      display: block !important;
+    }
+  }
+}
+
+@each $bp in map-keys($grid-breakpoints-side) {
+  .draggable .hidden-#{$bp}-up {
+    @include media-breakpoint-up-side($bp) {
+      display: none !important;
+    }
+  }
+}
 
 //== Typography
 //

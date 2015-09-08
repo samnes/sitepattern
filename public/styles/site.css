@@ -4736,6 +4736,60 @@ body {
   margin-bottom: 0px;
   border-bottom: 1px #D8D8D8 solid; }
 
+@media (min-width: 34em) {
+  .draggable .navbar-toggleable-xs {
+    display: none !important; } }
+
+@media (min-width: 48em) {
+  .draggable .navbar-toggleable-sm {
+    display: none !important; } }
+
+@media (min-width: 64.125em) {
+  .draggable .navbar-toggleable-xs {
+    display: block !important; } }
+
+@media (min-width: 78.125em) {
+  .draggable .navbar-toggleable-sm {
+    display: block !important; } }
+
+.draggable .hidden-xs-up {
+  display: block !important; }
+
+@media (min-width: 34em) {
+  .draggable .hidden-sm-up {
+    display: block !important; } }
+
+@media (min-width: 48em) {
+  .draggable .hidden-md-up {
+    display: block !important; } }
+
+@media (min-width: 62em) {
+  .draggable .hidden-lg-up {
+    display: block !important; } }
+
+@media (min-width: 75em) {
+  .draggable .hidden-xl-up {
+    display: block !important; } }
+
+.draggable .hidden-xs-up {
+  display: none !important; }
+
+@media (min-width: 64.125em) {
+  .draggable .hidden-sm-up {
+    display: none !important; } }
+
+@media (min-width: 78.125em) {
+  .draggable .hidden-md-up {
+    display: none !important; } }
+
+@media (min-width: 92.125em) {
+  .draggable .hidden-lg-up {
+    display: none !important; } }
+
+@media (min-width: 105.125em) {
+  .draggable .hidden-xl-up {
+    display: none !important; } }
+
 h1, .h1,
 h2, .h2,
 h3, .h3 {
