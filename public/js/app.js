@@ -140,21 +140,25 @@ $(function() {
   $('#viewport-tablet').click(function(){
       $('.container-resizable').removeClass('xl lg sm xs-sm').addClass('md');
       columns.removeClass('pull-none');
+      Holder.run();
   });
 
   $('#viewport-laptop').click(function(){
       $('.container-resizable').removeClass('xl md sm xs-sm').addClass('lg');
       columns.removeClass('pull-none');
+      Holder.run();
   });
 
   $('#viewport-desktop').click(function(){
       $('.container-resizable').removeClass('lg md sm xs-sm').addClass('xl');
       columns.removeClass('pull-none');
+      Holder.run();
   });
 
   $('#viewport-mobile-small').click(function(){
       $('.container-resizable').removeClass('xl lg md sm').addClass('xs-sm');
       columns.addClass('pull-none');
+      Holder.run();
   });
 
 
