@@ -82,14 +82,24 @@
 <div class="main">
 
 	<div class="container container-sidebars">
-		<h1> {{ data.views.title }} layout</h1>
+		<div class="pull-left">
+			<h1> {{ data.views.title }} layout</h1>
+		</div>
+		<div class="button-group btn-group pull-right">
+			<a id="viewport-desktop" class="btn btn-default" href="#"><i class="fa fa-desktop fa-lg"></i></a>
+			<a id="viewport-laptop" class="btn btn-default" href="#"><i class="fa fa-laptop fa-lg"></i></a>
+			<a id="viewport-tablet" class="btn btn-default" href="#"><i class="fa fa-tablet fa-lg"></i></a>
+			<a id="viewport-mobile" class="btn btn-default" href="#"><i class="fa fa-mobile fa-lg"></i></a>
+			<a id="viewport-mobile-small" class="btn btn-default" href="#"><i class="fa fa-mobile"></i></a>
+		</div>
 	</div>
 
 {% endblock %}
 
 
 {% block content %}
-  <div class="container container-sidebars">
+
+  <div class="container container-sidebars container-resizable">
     {% if data.views %}
 
       <div id="code" class="row hero-cards">

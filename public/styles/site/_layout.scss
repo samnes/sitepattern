@@ -119,6 +119,30 @@ h3, .h3 {
   padding-bottom: 20px;
 }
 
+// Container resize classes
+
+.xs-sm{
+	max-width: 30rem;
+}
+
+.sm{
+	max-width: 34rem;
+}
+.md{
+	max-width: 45rem;
+}
+.lg{
+	max-width: 60rem;
+}
+.xl{
+	max-width: 72.25rem;
+}
+
+.pull-none{
+	float: none;
+	width: 100%;
+}
+
 //== Hero
 //
 
