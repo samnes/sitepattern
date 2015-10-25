@@ -153,7 +153,7 @@ h3, .h3 {
 .front-page.container .jumbotron-custom{
 	border-radius: 0;
 	background-color: $brand-dark-secondary;
-	padding-top: 30px;
+	padding-top: 60px;
 	padding-bottom: 0px;
 	margin-bottom: 0px;
 }
@@ -286,27 +286,27 @@ h3, .h3 {
 	cursor:move;
 }
 
-#code .card-container .col-md-6{
+#code .card-container .action-container{
 	background-color: $btn-dark-border;
 	opacity: 0.97;
 	min-height: 56px;
 	padding: 6px 12px;
 }
-#code .card-container .col-md-6 a{
+#code .card-container .action-container a{
 	color: $btn-primary-color;
 	text-decoration: underline;
 }
 
-#code .card-container .col-md-6 h4{
+#code .card-container .action-container h4{
 	color: $btn-primary-color;
 	margin-top: 0.6rem;
 }
 
-#code .card-container .col-md-6 .btn-default{
+#code .card-container .action-container .btn-default{
 	background-color: $btn-dark-border;
 }
 
-#code .col-md-6 .btn-default{
+#code .action-container .btn-default{
 	background-color: $btn-dark-border;
 	border: 1px solid $brand-white;
 }
@@ -320,6 +320,9 @@ h3, .h3 {
 	cursor:default;
 }
 
+.pattern-row{
+	background-color: $brand-dark-tertiary;
+}
 
 //== Buttons
 //
@@ -426,10 +429,6 @@ h3, .h3 {
 }
 .card-header-first-level:first-child{
 	border-radius: 0;
-}
-
-.card-header-second-level{
-
 }
 
 .card-header-second-level h4.card-title a{

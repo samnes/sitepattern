@@ -4845,7 +4845,7 @@ h3, .h3 {
 .front-page.container .jumbotron-custom {
   border-radius: 0;
   background-color: #4A4A4A;
-  padding-top: 30px;
+  padding-top: 60px;
   padding-bottom: 0px;
   margin-bottom: 0px; }
 
@@ -4942,24 +4942,24 @@ h3, .h3 {
   position: relative;
   cursor: move; }
 
-#code .card-container .col-md-6 {
+#code .card-container .action-container {
   background-color: #2a2b2c;
   opacity: 0.97;
   min-height: 56px;
   padding: 6px 12px; }
 
-#code .card-container .col-md-6 a {
+#code .card-container .action-container a {
   color: #fff;
   text-decoration: underline; }
 
-#code .card-container .col-md-6 h4 {
+#code .card-container .action-container h4 {
   color: #fff;
   margin-top: 0.6rem; }
 
-#code .card-container .col-md-6 .btn-default {
+#code .card-container .action-container .btn-default {
   background-color: #2a2b2c; }
 
-#code .col-md-6 .btn-default {
+#code .action-container .btn-default {
   background-color: #2a2b2c;
   border: 1px solid #fff; }
 
@@ -4969,6 +4969,9 @@ h3, .h3 {
 .pattern-container {
   outline: #373839 solid 4px;
   cursor: default; }
+
+.pattern-row {
+  background-color: #2a2b2c; }
 
 .btn-rounded {
   border-radius: 25px;

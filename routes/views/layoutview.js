@@ -1,6 +1,6 @@
 'use strict';
-var keystone = require('keystone'),
-async = require('async');
+var keystone = require('keystone');
+var async = require('async');
 var _ = require('underscore');
 
 exports = module.exports = function(req, res) {
@@ -51,7 +51,7 @@ exports = module.exports = function(req, res) {
 
 	});
 
-	// Load the patterns
+	// Load the sidebar patterns
 
 	view.on('init', function(next) {
 
@@ -103,15 +103,16 @@ exports = module.exports = function(req, res) {
 
 						keystone.list('PatternCategory').model.find({name: category}, {_id: 1}, function(err, categories) {
 
-						    // Map the pattern categories into an array of just the _ids
-						    var ids = categories.map(function(category) { return category._id; });
+									    // Map the pattern categories into an array of just the _ids
+									    var ids = categories.map(function(category) { return category._id; });
 
-						    // Get the patterns whose patternCategories is in that set of ids
-						    q.find({patternCategories: {$in: ids}}).exec(function(err, patterns) {
-										var ids = patterns.map(function(pattern) { return pattern._id; });
-										ids = ids.map(function(item) {
-				    						return item.toString();
-										});
+									    // Get the patterns whose patternCategories is in that set of ids
+									  q.find({patternCategories: {$in: ids}}).exec(function(err, patterns) {
+													var ids = patterns.map(function(pattern) { return pattern._id; });
+
+													ids = ids.map(function(item) {
+							    						return item.toString();
+													});
 
 										 var strippedIds = _.intersection(ids,patternIds);
 

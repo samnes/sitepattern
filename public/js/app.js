@@ -41,6 +41,8 @@ $(function() {
       }
         element.removeClass('container-pattern-width');
 
+    }).on('shadow', function (el, source) {
+      Holder.run();
     }).on('drop', function (el,container, source) {
 
      if(container !== source) {
@@ -135,6 +137,7 @@ $(function() {
   $('#viewport-mobile').click(function(){
       $('.container-resizable').removeClass('xl lg md xs-sm').addClass('sm');
       columns.removeClass('pull-none');
+      Holder.run();
   });
 
   $('#viewport-tablet').click(function(){

@@ -1,5 +1,6 @@
 'use strict';
 var keystone = require('keystone');
+var _ = require('underscore');
 
 exports = module.exports = function(req, res) {
 
@@ -12,7 +13,8 @@ exports = module.exports = function(req, res) {
 		pattern: req.params.pattern
 	};
   locals.data = {
-    patterns: []
+    patterns: [],
+		sidepatterns: []
   };
 
 	// Load the current post
@@ -26,6 +28,59 @@ exports = module.exports = function(req, res) {
 			locals.data.patterns = result;
 			next(err);
 		});
+
+	});
+
+	// Load the sidebar patterns
+
+	view.on('init', function(next) {
+
+		var categoriesRes = [];
+		//var categoryNames = [];
+		var query = {};
+
+					// Get the _ids of the users of the selected category
+					var q = keystone.list('Pattern').model.find();
+
+					var category = 'Navigation';
+					console.log(category);
+
+						keystone.list('PatternCategory').model.find({name: category}, {_id: 1}, function(err, categories) {
+
+								// Get the id of the current category
+								var ids = categories.map(function(category) { return category._id; });
+
+										console.log('This is ids: ' + ids);
+									q.find({patternCategories: {$in: ids}}).exec(function(err, patterns) {
+										var ids = patterns.map(function(pattern) { return pattern._id; });
+
+
+										q.find({'_id': {$in: ids}}).exec(function(err, patterns) {
+
+											var patternCategory = {
+												category: category,
+												patterns: []
+											};
+
+											for (var i = 0; i < patterns.length; i++) {
+												patternCategory.patterns.push(patterns[i]);
+											}
+
+											categoriesRes.push(patternCategory);
+
+											query = q;
+
+											console.log(categoriesRes);
+
+											query.exec(function(err) {
+												locals.data.sidepatterns = categoriesRes;
+												next(err);
+											});
+
+										});
+
+								});
+							});
 
 	});
 
