@@ -24,7 +24,7 @@ var Types = keystone.Field.Types;
 * Relationships
 */
 
-Site.relationship({ ref: 'Layout', path: 'sites', refPath: "layouts" });
+Site.relationship({ref: 'Layout', path: 'sites', refPath: 'layouts' });
 
 
 Site.register();
