@@ -70,8 +70,8 @@ $(function() {
       var element = $(el);
       element.find('.img-deletable').remove();
 
-      element.find('.sidebar-thumbnail-title').children().removeClass('col-md-12').addClass('col-md-6');
-      element.find('.sidebar-thumbnail-title').append('<div class="col-md-6"><div class="button-group btn-group pull-right"><a class="delete btn btn-default" href="#"><i class="fa fa-trash"> Remove</i></a></div></div>');
+      //element.find('.sidebar-thumbnail-title').children().removeClass('col-md-12').addClass('col-md-6');
+      element.find('.sidebar-thumbnail-title .pull-right').append('<div class="button-group btn-group pull-right"><a class="delete btn btn-default" href="#"><i class="fa fa-trash"> Remove</i></a></div>');
     }
 
     /*Remove the container which is shown when every pattern is deleted*/
