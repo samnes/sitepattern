@@ -24,6 +24,7 @@ Layout.add({
  	image: { type: Types.CloudinaryImage, required: true, initial: false },
   description: { type: Types.Html, wysiwyg: true, height: 150, label: 'Description' },
   context: { type: Types.Html, wysiwyg: true, height: 150, label: 'Context of use' },
+  persuasivepatterns: { type: Types.Html, wysiwyg: true, height: 150, label: 'Persuasive patterns' },
   examples: { type: Types.Html, wysiwyg: true, height: 50, label: 'Links to example sites', note: 'Add bullet list of urls' }
 });
 

@@ -240,7 +240,7 @@
 
 							<div class="card">
 
-									<div class="card-header" role="tab" id="right-headingTwo">
+									<div class="card-header" role="tab" id="headingThree">
 										<h4 class="card-title">
 											<a role="button" data-toggle="collapse" data-parent="#accordion" href="#right-collapseThree" aria-expanded="true" aria-controls="right-collapseThree">
 												Examples of use
@@ -257,6 +257,30 @@
 							</div>
 
 							{% endif %}
+
+
+							{% if data.views.persuasivepatterns %}
+
+								<div class="card">
+
+										<div class="card-header" role="tab" id="headingFour">
+											<h4 class="card-title">
+												<a role="button" data-toggle="collapse" data-parent="#accordion" href="#right-collapseFour" aria-expanded="true" aria-controls="right-collapseFour">
+													Persuasive patterns
+												</a>
+											</h4>
+										</div>
+
+										<div id="right-collapseFour" class="card-collapse collapse in" role="tabpanel" aria-labelledby="right-headingFour">
+													<div class="card-block">
+														{{ data.views.persuasivepatterns }}
+													</div>
+										</div>
+
+								</div>
+
+								{% endif %}
+
 
 
 				</div>
