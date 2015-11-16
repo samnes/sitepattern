@@ -59,7 +59,6 @@ keystone.set('nav', {
 	'sites': 'sites',
 	'layouts': 'layouts',
 	'patterns': ['patterns', 'pattern-categories'],
-	'enquiries': 'enquiries',
 	'users': 'users'
 });
 
