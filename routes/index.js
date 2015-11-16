@@ -43,16 +43,12 @@ exports = module.exports = function(app) {
 
 	// Views
 	app.get('/', routes.views.index);
-	app.get('/blog/:category?', routes.views.blog);
-	app.get('/blog/post/:post', routes.views.post);
 
   app.get('/site', routes.views.site);
   app.get('/site/layout/:layout', routes.views.layout);
   app.get('/site/layout/:layout/view/:layoutview', routes.views.layoutview);
   app.get('/site/layout/:layout/view/:layoutview/pattern/:pattern', routes.views.pattern);
 
-	app.get('/gallery', routes.views.gallery);
-	app.all('/contact', routes.views.contact);
 
   app.all('/download', jsonParser, routes.util.download);
 
