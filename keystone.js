@@ -19,7 +19,7 @@ keystone.init({
 	'sass': 'public',
 	'static': 'public',
 	'favicon': 'public/favicon.ico',
-	'views': 'templates/views',
+	'views': ['templates', 'templates/views'],
 	'view engine': 'html',
 	'custom engine': cons.nunjucks,
 
@@ -28,7 +28,6 @@ keystone.init({
 	'auth': true,
 	'user model': 'User',
 	'cookie secret': '[3B<CiVV(;Orw0$6g6;|*N%_LZf)4Z/L%*{qdS^410k`9!42?<(W7|2-=OV=(p_/'
-
 });
 
 // Load your project's Models

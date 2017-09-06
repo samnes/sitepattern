@@ -1,4 +1,4 @@
-{% extends "templates/layouts/default.html" %}
+{% extends "layouts/default.html" %}
 
 {% block intro %}
 
@@ -31,7 +31,7 @@
 
 <div class="pattern">
     {% if data.patterns.code %}
-      {{ data.patterns.code }}
+    	{{ data.patterns.code |safe }}
     {% endif %}
 </div>
 
@@ -93,7 +93,7 @@
 							<div id="right-collapseOne" class="card-collapse collapse in" role="tabpanel" aria-labelledby="right-headingOne">
 							      <div class="card-block">
 											{% if data.patterns.description %}
-													{{ data.patterns.description }}
+													{{ data.patterns.description |safe }}
 											{% else %}
 												<p class="card-text">No description added yet.</p>
 											{% endif %}
@@ -115,7 +115,7 @@
 								<div id="right-collapseTwo" class="card-collapse collapse in" role="tabpanel" aria-labelledby="right-headingTwo">
 											<div class="card-block">
 												{% if data.patterns.context %}
-													{{ data.patterns.context }}
+													{{ data.patterns.context |safe  }}
 												{% else %}
 														<p class="card-text">No context of use added yet.</p>
 												{% endif %}
@@ -140,7 +140,7 @@
 
 									<div id="right-collapseThree" class="card-collapse collapse in" role="tabpanel" aria-labelledby="right-headingThree">
 												<div class="card-block">
-													{{ data.patterns.examples }}
+													{{ data.patterns.examples | escape  }}
 												</div>
 									</div>
 

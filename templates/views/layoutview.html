@@ -1,4 +1,4 @@
-{% extends "templates/layouts/default.html" %}
+{% extends "layouts/default.html" %}
 
 {% block intro %}
 
@@ -49,7 +49,7 @@
 
 																<div class="code" hidden>
 																	{% if pattern.code  %}
-																		{{ pattern.code }}
+																		{{ pattern.code |safe }}
 																	{% endif %}
 																</div>
 
@@ -135,7 +135,7 @@
 											</div>
 
 <div class="pattern">
-		{{ pattern.code }}
+		{{ pattern.code |safe }}
 </div>
 								<div class="container-fluid" hidden>
 
@@ -196,7 +196,7 @@
 							<div id="right-collapseOne" class="card-collapse collapse in" role="tabpanel" aria-labelledby="right-headingOne">
 					      <div class="card-block">
 									{% if data.views.description %}
-											{{ data.views.description }}
+											{{ data.views.description |safe }}
 									{% else %}
 										<p class="card-text">No description added yet.</p>
 									{% endif %}
@@ -219,7 +219,7 @@
 								<div id="right-collapseTwo" class="card-collapse collapse in" role="tabpanel" aria-labelledby="right-headingTwo">
 											<div class="card-block">
 												{% if data.views.context %}
-													{{ data.views.context }}
+													{{ data.views.context |safe }}
 												{% else %}
 														<p class="card-text">No context of use added yet.</p>
 												{% endif %}
@@ -244,7 +244,7 @@
 
 									<div id="right-collapseThree" class="card-collapse collapse in" role="tabpanel" aria-labelledby="right-headingThree">
 												<div class="card-block">
-													{{ data.views.examples }}
+													{{ data.views.examples |safe }}
 												</div>
 									</div>
 
@@ -267,7 +267,7 @@
 
 										<div id="right-collapseFour" class="card-collapse collapse in" role="tabpanel" aria-labelledby="right-headingFour">
 													<div class="card-block">
-														{{ data.views.persuasivepatterns }}
+														{{ data.views.persuasivepatterns |safe }}
 													</div>
 										</div>
 
